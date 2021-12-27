@@ -39,6 +39,7 @@
 			isa = PBXGroup;
 			children = (
 				9635E5302778A202009E82D4 /* Swifty Proteins */,
+				96E59FB127791D1D0094AD4C /* Supporting Files */,
 				9635E52F2778A202009E82D4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -57,11 +58,34 @@
 				9635E5312778A202009E82D4 /* AppDelegate.swift */,
 				9635E5332778A202009E82D4 /* SceneDelegate.swift */,
 				9635E5352778A202009E82D4 /* ViewController.swift */,
-				9635E53A2778A205009E82D4 /* Assets.xcassets */,
-				9635E53C2778A205009E82D4 /* LaunchScreen.storyboard */,
-				9635E53F2778A205009E82D4 /* Info.plist */,
 			);
 			path = "Swifty Proteins";
+			sourceTree = "<group>";
+		};
+		96E59FB127791D1D0094AD4C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				96E59FB227791D270094AD4C /* Assets.xcassets */,
+				96E59FB327791D320094AD4C /* Base.lproj */,
+				9635E53F2778A205009E82D4 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		96E59FB227791D270094AD4C /* Assets.xcassets */ = {
+			isa = PBXGroup;
+			children = (
+				9635E53A2778A205009E82D4 /* Assets.xcassets */,
+			);
+			path = Assets.xcassets;
+			sourceTree = "<group>";
+		};
+		96E59FB327791D320094AD4C /* Base.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				9635E53C2778A205009E82D4 /* LaunchScreen.storyboard */,
+			);
+			path = Base.lproj;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,7 +299,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Swifty Proteins/Info.plist";
+				INFOPLIST_FILE = "Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -293,7 +317,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Swifty Proteins/Info.plist";
+				INFOPLIST_FILE = "Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
