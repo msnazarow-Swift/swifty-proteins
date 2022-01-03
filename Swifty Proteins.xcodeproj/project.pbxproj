@@ -23,6 +23,7 @@
 		9635E53A2778A205009E82D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9635E53D2778A205009E82D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9635E53F2778A205009E82D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		96ED95A3278365C700AC4DDC /* ligands.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = ligands.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +71,7 @@
 				96E59FB227791D270094AD4C /* Assets.xcassets */,
 				96E59FB327791D320094AD4C /* Base.lproj */,
 				9635E53F2778A205009E82D4 /* Info.plist */,
+				96ED95A3278365C700AC4DDC /* ligands.txt */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
