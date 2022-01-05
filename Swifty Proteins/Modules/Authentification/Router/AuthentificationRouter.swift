@@ -18,9 +18,9 @@ class AuthentificationRouter: PresenterToRouterAuthentificationProtocol {
         self.view = view
     }
 
-    func routeToMain() {
-//        DispatchQueue.main.async {
-//            self.view.navigationController?.setViewControllers([DiaryAssembly.createModule()], animated: true)
-//        }
+    func routeToProteinList() {
+        DispatchQueue.main.async {
+            self.view.navigationController?.setViewControllers([ProteinListAssembly.createModule()], animated: true)
+        }
     }
 }

@@ -20,5 +20,5 @@ protocol ViewToPresenterAuthentificationProtocol: AnyObject {
 
 // MARK: Presenter Output (Presenter -> Router)
 protocol PresenterToRouterAuthentificationProtocol: AnyObject {
-    func routeToMain()
+    func routeToProteinList()
 }

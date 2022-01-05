@@ -13,11 +13,21 @@ class AuthentificationViewController: UIViewController {
     // MARK: - Properties
     var presenter: ViewToPresenterAuthentificationProtocol!
 
+	// MARK: - Views
+	let backgroundImage: UIImageView = {
+		let image = UIImageView(image: UIImage(named: "background"))
+		image.translatesAutoresizingMaskIntoConstraints = false
+		image.contentMode = .scaleAspectFit
+		return image
+	}()
+
     let button: UIButton = {
         let button = UIButton()
-        button.setTitle("Paper, Please!", for: .normal)
+        button.setTitle(" Login ", for: .normal)
         button.setTitleColor(.cyan, for: .normal)
+		button.backgroundColor = .lightGray
         button.translatesAutoresizingMaskIntoConstraints = false
+		button.layer.cornerRadius = 10
         button.addTarget(self, action: #selector(didButtonTapped), for: .touchUpInside)
         return button
     }()
@@ -35,13 +45,18 @@ class AuthentificationViewController: UIViewController {
     }
 
     private func addSubviews() {
+		view.addSubview(backgroundImage)
         view.addSubview(button)
     }
 
     private func setupConstraints() {
         NSLayoutConstraint.activate([
+			backgroundImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+			backgroundImage.topAnchor.constraint(equalTo: view.topAnchor),
+			backgroundImage.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+
             button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            button.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+            button.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100)
         ])
     }
 

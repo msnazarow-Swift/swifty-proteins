@@ -43,7 +43,7 @@ class AuthentificationPresenter: ViewToPresenterAuthentificationProtocol {
                 if !success || error != nil {
                     print(error?.localizedDescription ?? "Error occured")
                 } else {
-                    self.router.routeToMain()
+                    self.router.routeToProteinList()
                 }
             }
         }
