@@ -9,21 +9,78 @@
 /* Begin PBXBuildFile section */
 		9635E5322778A202009E82D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9635E5312778A202009E82D4 /* AppDelegate.swift */; };
 		9635E5342778A202009E82D4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9635E5332778A202009E82D4 /* SceneDelegate.swift */; };
-		9635E5362778A202009E82D4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9635E5352778A202009E82D4 /* ViewController.swift */; };
 		9635E53B2778A205009E82D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9635E53A2778A205009E82D4 /* Assets.xcassets */; };
 		9635E53E2778A205009E82D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9635E53C2778A205009E82D4 /* LaunchScreen.storyboard */; };
 		96648C0C277A55F40000138D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 96648C0B277A55F40000138D /* Alamofire */; };
+		F6162BC02785099F00C31C46 /* AuthentificationContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6162BB42785099F00C31C46 /* AuthentificationContract.swift */; };
+		F6162BC12785099F00C31C46 /* AuthentificationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6162BB62785099F00C31C46 /* AuthentificationAssembly.swift */; };
+		F6162BC22785099F00C31C46 /* AuthentificationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6162BB82785099F00C31C46 /* AuthentificationPresenter.swift */; };
+		F6162BC42785099F00C31C46 /* AuthentificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6162BBB2785099F00C31C46 /* AuthentificationViewController.swift */; };
+		F6162BC62785099F00C31C46 /* AuthentificationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6162BBF2785099F00C31C46 /* AuthentificationRouter.swift */; };
+		F6BCD905278527A20045AE29 /* ProteinContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BCD8DF278527A20045AE29 /* ProteinContract.swift */; };
+		F6BCD906278527A20045AE29 /* ProteinAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BCD8E1278527A20045AE29 /* ProteinAssembly.swift */; };
+		F6BCD907278527A20045AE29 /* ProteinDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BCD8E3278527A20045AE29 /* ProteinDataSource.swift */; };
+		F6BCD908278527A20045AE29 /* ProteinPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BCD8E4278527A20045AE29 /* ProteinPresenter.swift */; };
+		F6BCD909278527A20045AE29 /* ProteinCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BCD8E7278527A20045AE29 /* ProteinCellModel.swift */; };
+		F6BCD90A278527A20045AE29 /* ProteinCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BCD8E8278527A20045AE29 /* ProteinCell.swift */; };
+		F6BCD90B278527A20045AE29 /* ProteinSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BCD8E9278527A20045AE29 /* ProteinSectionModel.swift */; };
+		F6BCD90C278527A20045AE29 /* ProteinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BCD8EB278527A20045AE29 /* ProteinView.swift */; };
+		F6BCD90D278527A20045AE29 /* ProteinInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BCD8ED278527A20045AE29 /* ProteinInteractor.swift */; };
+		F6BCD90E278527A20045AE29 /* ProteinRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BCD8F0278527A20045AE29 /* ProteinRouter.swift */; };
+		F6BCD90F278527A20045AE29 /* ProteinListContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BCD8F3278527A20045AE29 /* ProteinListContract.swift */; };
+		F6BCD910278527A20045AE29 /* ProteinListAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BCD8F5278527A20045AE29 /* ProteinListAssembly.swift */; };
+		F6BCD911278527A20045AE29 /* ProteinListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BCD8F7278527A20045AE29 /* ProteinListPresenter.swift */; };
+		F6BCD912278527A20045AE29 /* ProteinListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BCD8F8278527A20045AE29 /* ProteinListDataSource.swift */; };
+		F6BCD913278527A20045AE29 /* ProteinListSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BCD8FB278527A20045AE29 /* ProteinListSection.swift */; };
+		F6BCD914278527A20045AE29 /* ProteinListCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BCD8FC278527A20045AE29 /* ProteinListCellModel.swift */; };
+		F6BCD915278527A20045AE29 /* ProteinListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BCD8FD278527A20045AE29 /* ProteinListCell.swift */; };
+		F6BCD916278527A20045AE29 /* ProteinListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BCD8FF278527A20045AE29 /* ProteinListView.swift */; };
+		F6BCD917278527A20045AE29 /* ProteinListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BCD901278527A20045AE29 /* ProteinListInteractor.swift */; };
+		F6BCD918278527A20045AE29 /* ProteinListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BCD904278527A20045AE29 /* ProteinListRouter.swift */; };
+		F6BCD91C278527F90045AE29 /* TableViewSectionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BCD91B278527F90045AE29 /* TableViewSectionProtocol.swift */; };
+		F6BCD920278528230045AE29 /* ModelRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BCD91F278528230045AE29 /* ModelRepresentable.swift */; };
+		F6BCD925278529190045AE29 /* CellIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BCD924278529190045AE29 /* CellIdentifiable.swift */; };
+		F6BCD927278530820045AE29 /* ligands.txt in Resources */ = {isa = PBXBuildFile; fileRef = F6BCD926278530820045AE29 /* ligands.txt */; };
+		F6BCD92A278532AE0045AE29 /* UITableView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BCD929278532AE0045AE29 /* UITableView+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9635E52E2778A202009E82D4 /* Swifty Proteins.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swifty Proteins.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9635E5312778A202009E82D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9635E5332778A202009E82D4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9635E5352778A202009E82D4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9635E53A2778A205009E82D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9635E53D2778A205009E82D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9635E53F2778A205009E82D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		96ED95A3278365C700AC4DDC /* ligands.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = ligands.txt; sourceTree = "<group>"; };
+		F6162BB42785099F00C31C46 /* AuthentificationContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthentificationContract.swift; sourceTree = "<group>"; };
+		F6162BB62785099F00C31C46 /* AuthentificationAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthentificationAssembly.swift; sourceTree = "<group>"; };
+		F6162BB82785099F00C31C46 /* AuthentificationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthentificationPresenter.swift; sourceTree = "<group>"; };
+		F6162BBB2785099F00C31C46 /* AuthentificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthentificationViewController.swift; sourceTree = "<group>"; };
+		F6162BBF2785099F00C31C46 /* AuthentificationRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthentificationRouter.swift; sourceTree = "<group>"; };
+		F6BCD8DF278527A20045AE29 /* ProteinContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProteinContract.swift; sourceTree = "<group>"; };
+		F6BCD8E1278527A20045AE29 /* ProteinAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProteinAssembly.swift; sourceTree = "<group>"; };
+		F6BCD8E3278527A20045AE29 /* ProteinDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProteinDataSource.swift; sourceTree = "<group>"; };
+		F6BCD8E4278527A20045AE29 /* ProteinPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProteinPresenter.swift; sourceTree = "<group>"; };
+		F6BCD8E7278527A20045AE29 /* ProteinCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProteinCellModel.swift; sourceTree = "<group>"; };
+		F6BCD8E8278527A20045AE29 /* ProteinCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProteinCell.swift; sourceTree = "<group>"; };
+		F6BCD8E9278527A20045AE29 /* ProteinSectionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProteinSectionModel.swift; sourceTree = "<group>"; };
+		F6BCD8EB278527A20045AE29 /* ProteinView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProteinView.swift; sourceTree = "<group>"; };
+		F6BCD8ED278527A20045AE29 /* ProteinInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProteinInteractor.swift; sourceTree = "<group>"; };
+		F6BCD8F0278527A20045AE29 /* ProteinRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProteinRouter.swift; sourceTree = "<group>"; };
+		F6BCD8F3278527A20045AE29 /* ProteinListContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProteinListContract.swift; sourceTree = "<group>"; };
+		F6BCD8F5278527A20045AE29 /* ProteinListAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProteinListAssembly.swift; sourceTree = "<group>"; };
+		F6BCD8F7278527A20045AE29 /* ProteinListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProteinListPresenter.swift; sourceTree = "<group>"; };
+		F6BCD8F8278527A20045AE29 /* ProteinListDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProteinListDataSource.swift; sourceTree = "<group>"; };
+		F6BCD8FB278527A20045AE29 /* ProteinListSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProteinListSection.swift; sourceTree = "<group>"; };
+		F6BCD8FC278527A20045AE29 /* ProteinListCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProteinListCellModel.swift; sourceTree = "<group>"; };
+		F6BCD8FD278527A20045AE29 /* ProteinListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProteinListCell.swift; sourceTree = "<group>"; };
+		F6BCD8FF278527A20045AE29 /* ProteinListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProteinListView.swift; sourceTree = "<group>"; };
+		F6BCD901278527A20045AE29 /* ProteinListInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProteinListInteractor.swift; sourceTree = "<group>"; };
+		F6BCD904278527A20045AE29 /* ProteinListRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProteinListRouter.swift; sourceTree = "<group>"; };
+		F6BCD91B278527F90045AE29 /* TableViewSectionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewSectionProtocol.swift; sourceTree = "<group>"; };
+		F6BCD91F278528230045AE29 /* ModelRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelRepresentable.swift; sourceTree = "<group>"; };
+		F6BCD924278529190045AE29 /* CellIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellIdentifiable.swift; sourceTree = "<group>"; };
+		F6BCD926278530820045AE29 /* ligands.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ligands.txt; path = "Supporting Files/ligands.txt"; sourceTree = SOURCE_ROOT; };
+		F6BCD929278532AE0045AE29 /* UITableView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,9 +115,9 @@
 		9635E5302778A202009E82D4 /* Swifty Proteins */ = {
 			isa = PBXGroup;
 			children = (
-				9635E5312778A202009E82D4 /* AppDelegate.swift */,
-				9635E5332778A202009E82D4 /* SceneDelegate.swift */,
-				9635E5352778A202009E82D4 /* ViewController.swift */,
+				F6BCD928278532930045AE29 /* Extentions */,
+				F6BCD919278527C30045AE29 /* Components */,
+				F6162BB12785097200C31C46 /* Modules */,
 			);
 			path = "Swifty Proteins";
 			sourceTree = "<group>";
@@ -68,10 +125,11 @@
 		96E59FB127791D1D0094AD4C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9635E5312778A202009E82D4 /* AppDelegate.swift */,
+				9635E5332778A202009E82D4 /* SceneDelegate.swift */,
 				96E59FB227791D270094AD4C /* Assets.xcassets */,
 				96E59FB327791D320094AD4C /* Base.lproj */,
 				9635E53F2778A205009E82D4 /* Info.plist */,
-				96ED95A3278365C700AC4DDC /* ligands.txt */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -80,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				9635E53A2778A205009E82D4 /* Assets.xcassets */,
+				F6BCD926278530820045AE29 /* ligands.txt */,
 			);
 			path = Assets.xcassets;
 			sourceTree = "<group>";
@@ -90,6 +149,272 @@
 				9635E53C2778A205009E82D4 /* LaunchScreen.storyboard */,
 			);
 			path = Base.lproj;
+			sourceTree = "<group>";
+		};
+		F6162BB12785097200C31C46 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				F6BCD8DD278527A20045AE29 /* Protein */,
+				F6BCD8F1278527A20045AE29 /* ProteinList */,
+				F6162BB22785099F00C31C46 /* Authentification */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		F6162BB22785099F00C31C46 /* Authentification */ = {
+			isa = PBXGroup;
+			children = (
+				F6162BB32785099F00C31C46 /* Contract */,
+				F6162BB52785099F00C31C46 /* Assembly */,
+				F6162BB72785099F00C31C46 /* Presenter */,
+				F6162BBA2785099F00C31C46 /* View */,
+				F6162BBE2785099F00C31C46 /* Router */,
+			);
+			path = Authentification;
+			sourceTree = "<group>";
+		};
+		F6162BB32785099F00C31C46 /* Contract */ = {
+			isa = PBXGroup;
+			children = (
+				F6162BB42785099F00C31C46 /* AuthentificationContract.swift */,
+			);
+			path = Contract;
+			sourceTree = "<group>";
+		};
+		F6162BB52785099F00C31C46 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				F6162BB62785099F00C31C46 /* AuthentificationAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		F6162BB72785099F00C31C46 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				F6162BB82785099F00C31C46 /* AuthentificationPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		F6162BBA2785099F00C31C46 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F6162BBB2785099F00C31C46 /* AuthentificationViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F6162BBE2785099F00C31C46 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				F6162BBF2785099F00C31C46 /* AuthentificationRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		F6BCD8DD278527A20045AE29 /* Protein */ = {
+			isa = PBXGroup;
+			children = (
+				F6BCD8DE278527A20045AE29 /* Contract */,
+				F6BCD8E0278527A20045AE29 /* Assembly */,
+				F6BCD8E2278527A20045AE29 /* Presenter */,
+				F6BCD8E5278527A20045AE29 /* Components */,
+				F6BCD8EA278527A20045AE29 /* View */,
+				F6BCD8EC278527A20045AE29 /* Interactor */,
+				F6BCD8EE278527A20045AE29 /* Entities */,
+				F6BCD8EF278527A20045AE29 /* Router */,
+			);
+			path = Protein;
+			sourceTree = "<group>";
+		};
+		F6BCD8DE278527A20045AE29 /* Contract */ = {
+			isa = PBXGroup;
+			children = (
+				F6BCD8DF278527A20045AE29 /* ProteinContract.swift */,
+			);
+			path = Contract;
+			sourceTree = "<group>";
+		};
+		F6BCD8E0278527A20045AE29 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				F6BCD8E1278527A20045AE29 /* ProteinAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		F6BCD8E2278527A20045AE29 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				F6BCD8E3278527A20045AE29 /* ProteinDataSource.swift */,
+				F6BCD8E4278527A20045AE29 /* ProteinPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		F6BCD8E5278527A20045AE29 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				F6BCD8E6278527A20045AE29 /* UITableViewComponents */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		F6BCD8E6278527A20045AE29 /* UITableViewComponents */ = {
+			isa = PBXGroup;
+			children = (
+				F6BCD8E7278527A20045AE29 /* ProteinCellModel.swift */,
+				F6BCD8E8278527A20045AE29 /* ProteinCell.swift */,
+				F6BCD8E9278527A20045AE29 /* ProteinSectionModel.swift */,
+			);
+			path = UITableViewComponents;
+			sourceTree = "<group>";
+		};
+		F6BCD8EA278527A20045AE29 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F6BCD8EB278527A20045AE29 /* ProteinView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F6BCD8EC278527A20045AE29 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				F6BCD8ED278527A20045AE29 /* ProteinInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		F6BCD8EE278527A20045AE29 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		F6BCD8EF278527A20045AE29 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				F6BCD8F0278527A20045AE29 /* ProteinRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		F6BCD8F1278527A20045AE29 /* ProteinList */ = {
+			isa = PBXGroup;
+			children = (
+				F6BCD8F2278527A20045AE29 /* Contract */,
+				F6BCD8F4278527A20045AE29 /* Assembly */,
+				F6BCD8F6278527A20045AE29 /* Presenter */,
+				F6BCD8F9278527A20045AE29 /* Components */,
+				F6BCD8FE278527A20045AE29 /* View */,
+				F6BCD900278527A20045AE29 /* Interactor */,
+				F6BCD902278527A20045AE29 /* Entities */,
+				F6BCD903278527A20045AE29 /* Router */,
+			);
+			path = ProteinList;
+			sourceTree = "<group>";
+		};
+		F6BCD8F2278527A20045AE29 /* Contract */ = {
+			isa = PBXGroup;
+			children = (
+				F6BCD8F3278527A20045AE29 /* ProteinListContract.swift */,
+			);
+			path = Contract;
+			sourceTree = "<group>";
+		};
+		F6BCD8F4278527A20045AE29 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				F6BCD8F5278527A20045AE29 /* ProteinListAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		F6BCD8F6278527A20045AE29 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				F6BCD8F7278527A20045AE29 /* ProteinListPresenter.swift */,
+				F6BCD8F8278527A20045AE29 /* ProteinListDataSource.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		F6BCD8F9278527A20045AE29 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				F6BCD8FA278527A20045AE29 /* UITableViewComponents */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		F6BCD8FA278527A20045AE29 /* UITableViewComponents */ = {
+			isa = PBXGroup;
+			children = (
+				F6BCD8FB278527A20045AE29 /* ProteinListSection.swift */,
+				F6BCD8FC278527A20045AE29 /* ProteinListCellModel.swift */,
+				F6BCD8FD278527A20045AE29 /* ProteinListCell.swift */,
+			);
+			path = UITableViewComponents;
+			sourceTree = "<group>";
+		};
+		F6BCD8FE278527A20045AE29 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F6BCD8FF278527A20045AE29 /* ProteinListView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F6BCD900278527A20045AE29 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				F6BCD901278527A20045AE29 /* ProteinListInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		F6BCD902278527A20045AE29 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		F6BCD903278527A20045AE29 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				F6BCD904278527A20045AE29 /* ProteinListRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		F6BCD919278527C30045AE29 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				F6BCD91A278527E00045AE29 /* UITableViewComponents */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		F6BCD91A278527E00045AE29 /* UITableViewComponents */ = {
+			isa = PBXGroup;
+			children = (
+				F6BCD91B278527F90045AE29 /* TableViewSectionProtocol.swift */,
+				F6BCD924278529190045AE29 /* CellIdentifiable.swift */,
+				F6BCD91F278528230045AE29 /* ModelRepresentable.swift */,
+			);
+			path = UITableViewComponents;
+			sourceTree = "<group>";
+		};
+		F6BCD928278532930045AE29 /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				F6BCD929278532AE0045AE29 /* UITableView+Ext.swift */,
+			);
+			path = Extentions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,6 +481,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9635E53E2778A205009E82D4 /* LaunchScreen.storyboard in Resources */,
+				F6BCD927278530820045AE29 /* ligands.txt in Resources */,
 				9635E53B2778A205009E82D4 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -167,9 +493,37 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9635E5362778A202009E82D4 /* ViewController.swift in Sources */,
+				F6BCD916278527A20045AE29 /* ProteinListView.swift in Sources */,
+				F6BCD912278527A20045AE29 /* ProteinListDataSource.swift in Sources */,
+				F6BCD920278528230045AE29 /* ModelRepresentable.swift in Sources */,
+				F6162BC22785099F00C31C46 /* AuthentificationPresenter.swift in Sources */,
+				F6BCD90F278527A20045AE29 /* ProteinListContract.swift in Sources */,
 				9635E5322778A202009E82D4 /* AppDelegate.swift in Sources */,
+				F6162BC12785099F00C31C46 /* AuthentificationAssembly.swift in Sources */,
+				F6BCD90B278527A20045AE29 /* ProteinSectionModel.swift in Sources */,
+				F6BCD90E278527A20045AE29 /* ProteinRouter.swift in Sources */,
+				F6BCD913278527A20045AE29 /* ProteinListSection.swift in Sources */,
+				F6BCD90C278527A20045AE29 /* ProteinView.swift in Sources */,
+				F6BCD917278527A20045AE29 /* ProteinListInteractor.swift in Sources */,
+				F6BCD92A278532AE0045AE29 /* UITableView+Ext.swift in Sources */,
+				F6BCD91C278527F90045AE29 /* TableViewSectionProtocol.swift in Sources */,
+				F6162BC02785099F00C31C46 /* AuthentificationContract.swift in Sources */,
+				F6BCD910278527A20045AE29 /* ProteinListAssembly.swift in Sources */,
+				F6162BC42785099F00C31C46 /* AuthentificationViewController.swift in Sources */,
+				F6BCD918278527A20045AE29 /* ProteinListRouter.swift in Sources */,
+				F6BCD911278527A20045AE29 /* ProteinListPresenter.swift in Sources */,
+				F6BCD915278527A20045AE29 /* ProteinListCell.swift in Sources */,
+				F6BCD906278527A20045AE29 /* ProteinAssembly.swift in Sources */,
 				9635E5342778A202009E82D4 /* SceneDelegate.swift in Sources */,
+				F6162BC62785099F00C31C46 /* AuthentificationRouter.swift in Sources */,
+				F6BCD90A278527A20045AE29 /* ProteinCell.swift in Sources */,
+				F6BCD907278527A20045AE29 /* ProteinDataSource.swift in Sources */,
+				F6BCD908278527A20045AE29 /* ProteinPresenter.swift in Sources */,
+				F6BCD925278529190045AE29 /* CellIdentifiable.swift in Sources */,
+				F6BCD905278527A20045AE29 /* ProteinContract.swift in Sources */,
+				F6BCD90D278527A20045AE29 /* ProteinInteractor.swift in Sources */,
+				F6BCD914278527A20045AE29 /* ProteinListCellModel.swift in Sources */,
+				F6BCD909278527A20045AE29 /* ProteinCellModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,7 +663,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C3U3K8MPRH;
 				INFOPLIST_FILE = "Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -327,7 +683,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C3U3K8MPRH;
 				INFOPLIST_FILE = "Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
