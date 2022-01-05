@@ -17,16 +17,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="aLq-NX-QRm">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="C9C-sb-GQc">
                                 <rect key="frame" x="-198" y="0.0" width="810" height="896"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="aLq-NX-QRm" firstAttribute="bottom" secondItem="Ze5-6b-2t3" secondAttribute="bottom" id="8a3-wB-o18"/>
-                            <constraint firstItem="aLq-NX-QRm" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="hrB-4A-AVE"/>
-                            <constraint firstAttribute="top" secondItem="aLq-NX-QRm" secondAttribute="top" id="raX-DK-PV8"/>
+                            <constraint firstAttribute="top" secondItem="C9C-sb-GQc" secondAttribute="top" id="beK-U0-KfD"/>
+                            <constraint firstItem="C9C-sb-GQc" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="fhU-BP-gsd"/>
+                            <constraint firstItem="C9C-sb-GQc" firstAttribute="bottom" secondItem="Ze5-6b-2t3" secondAttribute="bottom" id="iof-11-HdL"/>
                         </constraints>
                     </view>
                 </viewController>

@@ -21,16 +21,16 @@ class AuthentificationViewController: UIViewController {
 		return image
 	}()
 
-    let button: UIButton = {
-        let button = UIButton()
-        button.setTitle(" Login ", for: .normal)
-        button.setTitleColor(.cyan, for: .normal)
-		button.backgroundColor = .lightGray
-        button.translatesAutoresizingMaskIntoConstraints = false
+	let button: UIButton = {
+		let button = UIButton()
+		button.setTitle("  Login  ", for: .normal)
+		button.setTitleColor(.white, for: .normal)
+		button.backgroundColor = .darkGray
+		button.translatesAutoresizingMaskIntoConstraints = false
 		button.layer.cornerRadius = 10
-        button.addTarget(self, action: #selector(didButtonTapped), for: .touchUpInside)
-        return button
-    }()
+		button.addTarget(self, action: #selector(didButtonTapped), for: .touchUpInside)
+		return button
+	}()
 
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {

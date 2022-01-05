@@ -9,7 +9,7 @@ import UIKit
 
 class ProteinListDataSource: NSObject {
     // MARK: Properties
-    weak var presenter: ProteinListCellOutput?
+    weak var presenter: (ProteinListCellOutput & ProteinListDataSourceOutput)?
     private var sections: [TableViewSectionProtocol] = []
 }
 
@@ -38,5 +38,13 @@ extension ProteinListDataSource {
 		cell.presenter = presenter
 		cell.model = model
 		return cell
+	}
+}
+
+// MARK: - UITableViewDelegate
+extension ProteinListDataSource {
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		guard let model = sections[indexPath.section].rows[indexPath.row] as? ProteinListCellModel else { return }
+		presenter?.didSelectProtein(model)
 	}
 }

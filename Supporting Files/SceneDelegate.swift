@@ -13,7 +13,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
 		window = UIWindow(windowScene: windowScene)
+		window?.overrideUserInterfaceStyle = .dark
 		let navigation = UINavigationController(rootViewController: AuthentificationAssembly.createModule())
+		navigation.navigationBar.barTintColor = .clear
         window?.rootViewController = navigation
         window?.makeKeyAndVisible()
     }

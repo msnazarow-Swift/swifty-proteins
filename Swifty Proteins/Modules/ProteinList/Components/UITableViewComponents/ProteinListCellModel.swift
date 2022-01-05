@@ -9,8 +9,9 @@ import UIKit
 
 struct ProteinListCellModel: Identifiable {
 	let identifier = "ProteinListCell"
+	let title: String
 
-	init(_ property: Any) {
-
+	init(_ property: String) {
+		title = property
 	}
 }

@@ -14,16 +14,19 @@ class ProteinPresenter {
     let interactor: ProteinInteractorInput
     let router: ProteinRouterInput
     let dataSource: ProteinDataSourceInput
+	let protein: String
 
     // MARK: Init
     init(
         interactor: ProteinInteractorInput,
         router: ProteinRouterInput,
-        dataSource: ProteinDataSourceInput
+        dataSource: ProteinDataSourceInput,
+		protein: String
     ) {
         self.interactor = interactor
         self.router = router
         self.dataSource = dataSource
+		self.protein = protein
     }
 }
 

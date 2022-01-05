@@ -8,11 +8,15 @@
 import UIKit
 
 // MARK: - View Input (Presenter -> View)
-protocol ProteinListViewInput: AnyObject {}
+protocol ProteinListViewInput: AnyObject {
+	func tableViewReload() 
+}
 
 // MARK: - View Output (View -> Presenter)
 protocol ProteinListViewOutput: AnyObject {
     var dataSource: ProteinListDataSourceInput { get }
+
+	func updateSearchResults(text: String?)
     func viewDidLoad()
 }
 
@@ -23,11 +27,18 @@ protocol ProteinListInteractorInput: AnyObject {}
 protocol ProteinListInteractorOutput: AnyObject {}
 
 // MARK: - Router Input (Presenter -> Router)
-protocol ProteinListRouterInput: AnyObject {}
+protocol ProteinListRouterInput: AnyObject {
+	func routeToProtein(_ protein: String)
+}
 
 // MARK: - DataSource Input (Presenter -> DataSource)
-protocol ProteinListDataSourceInput: UITableViewDataSource {
+protocol ProteinListDataSourceInput: UITableViewDataSource, UITableViewDelegate {
     func updateForSections(_ sections: [TableViewSectionProtocol])
+}
+
+// MARK: - DataSource Input (DataSource -> Presenter)
+protocol ProteinListDataSourceOutput {
+	func didSelectProtein(_ protein: ProteinListCellModel)
 }
 
 // MARK: - Cell Output (Cell -> Presenter)

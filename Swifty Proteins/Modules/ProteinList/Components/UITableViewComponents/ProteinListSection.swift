@@ -1,5 +1,5 @@
 // 
-//  ProteinListSectionModel.swift
+//  ProteinListSection.swift
 //  Swifty Proteins
 //
 //  Created by 19733654 on 05.01.2022.
@@ -7,10 +7,10 @@
 
 import Foundation
 
-final class ProteinListSectionModel: TableViewSectionProtocol {
+final class ProteinListSection: TableViewSectionProtocol {
     var rows: [Identifiable] = []
 
-    init(_ properties: [Any]) {
+    init(_ properties: [String]) {
         properties.forEach {
             rows.append(ProteinListCellModel($0))
         }

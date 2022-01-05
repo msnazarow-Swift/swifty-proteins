@@ -36,6 +36,7 @@ class AuthentificationPresenter: ViewToPresenterAuthentificationProtocol {
     func didButtonTapped() {
         auth()
     }
+
     private func auth() {
         let reason = NSLocalizedString("You should be authorized", comment: "reason for auth")
         if context.canEvaluatePolicy(.deviceOwnerAuthentication, error: nil) {

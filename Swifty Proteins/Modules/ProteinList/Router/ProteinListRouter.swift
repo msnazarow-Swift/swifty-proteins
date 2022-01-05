@@ -13,4 +13,8 @@ class ProteinListRouter {
 }
 
 // MARK: - Router Input (Presenter -> Router)
-extension ProteinListRouter: ProteinListRouterInput {}
+extension ProteinListRouter: ProteinListRouterInput {
+	func routeToProtein(_ protein: String) {
+		view?.navigationController?.pushViewController(ProteinAssembly.createModule(protein: protein), animated: true)
+	}
+}
