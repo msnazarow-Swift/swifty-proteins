@@ -10,6 +10,7 @@ import UIKit
 // MARK: - View Input (Presenter -> View)
 protocol ProteinViewInput: AnyObject {
     func showMolecule(_: Molecule)
+    func reciveError(_ error: String)
 }
 
 // MARK: - View Output (View -> Presenter)
@@ -26,6 +27,7 @@ protocol ProteinInteractorInput: AnyObject {
 // MARK: - Interactor Output (Interactor -> Presenter)
 protocol ProteinInteractorOutput: AnyObject {
     func presentMolecule(_: Molecule)
+    func reciveError(_ error: Error)
 }
 
 // MARK: - Router Input (Presenter -> Router)

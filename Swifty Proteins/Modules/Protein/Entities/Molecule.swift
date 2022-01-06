@@ -20,7 +20,6 @@ final class Molecule: Equatable {
     }
 
     static func == (lhs: Molecule, rhs: Molecule) -> Bool {
-        lhs.name == rhs.name &&
-            lhs.atoms == rhs.atoms
+        lhs.name == rhs.name && lhs.atoms == rhs.atoms
     }
 }

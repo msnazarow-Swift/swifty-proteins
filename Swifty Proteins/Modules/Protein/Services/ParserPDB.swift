@@ -7,7 +7,16 @@
 
 import SceneKit
 
-final class ParserPDB {
+protocol ParserInput {
+    func parsePDB(_ text: String) -> Molecule
+}
+
+final class ParserPDB: ParserInput {
+    /// Shared Parser
+    static let shared: ParserInput = ParserPDB()
+    
+    private init() {}
+    
     /// Returns filled molecule
     /// - Parameter text: Protein name
     /// - Returns: Molecule

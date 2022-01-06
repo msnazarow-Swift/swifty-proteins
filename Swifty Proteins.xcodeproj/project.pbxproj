@@ -164,11 +164,12 @@
 			path = Entities;
 			sourceTree = "<group>";
 		};
-		96ED95AD2786F2C600AC4DDC /* Builder */ = {
+		96ED95AD2786F2C600AC4DDC /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				96ED95AE2786F2DA00AC4DDC /* ParserPDB.swift */,
 			);
-			path = Builder;
+			path = Services;
 			sourceTree = "<group>";
 		};
 		F6162BB12785097200C31C46 /* Modules */ = {
@@ -244,7 +245,7 @@
 				F6BCD8EC278527A20045AE29 /* Interactor */,
 				96ED95A72786F0BF00AC4DDC /* Entities */,
 				F6BCD8EF278527A20045AE29 /* Router */,
-				96ED95AD2786F2C600AC4DDC /* Builder */,
+				96ED95AD2786F2C600AC4DDC /* Services */,
 			);
 			path = Protein;
 			sourceTree = "<group>";
@@ -304,7 +305,6 @@
 			isa = PBXGroup;
 			children = (
 				F6BCD8ED278527A20045AE29 /* ProteinInteractor.swift */,
-				96ED95AE2786F2DA00AC4DDC /* ParserPDB.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
