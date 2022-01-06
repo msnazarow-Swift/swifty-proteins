@@ -8,7 +8,10 @@
 import UIKit
 
 // MARK: - View Input (Presenter -> View)
-protocol ProteinViewInput: AnyObject {}
+protocol ProteinViewInput: AnyObject {
+    func showMolecule(_: Molecule)
+    func reciveError(_ error: String)
+}
 
 // MARK: - View Output (View -> Presenter)
 protocol ProteinViewOutput: AnyObject {
@@ -17,10 +20,15 @@ protocol ProteinViewOutput: AnyObject {
 }
 
 // MARK: - Interactor Input (Presenter -> Interactor)
-protocol ProteinInteractorInput: AnyObject {}
+protocol ProteinInteractorInput: AnyObject {
+    func getMolecule(name: String)
+}
 
 // MARK: - Interactor Output (Interactor -> Presenter)
-protocol ProteinInteractorOutput: AnyObject {}
+protocol ProteinInteractorOutput: AnyObject {
+    func presentMolecule(_: Molecule)
+    func reciveError(_ error: Error)
+}
 
 // MARK: - Router Input (Presenter -> Router)
 protocol ProteinRouterInput: AnyObject {}
