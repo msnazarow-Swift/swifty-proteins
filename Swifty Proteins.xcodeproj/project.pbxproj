@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,7 +11,9 @@
 		9635E5342778A202009E82D4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9635E5332778A202009E82D4 /* SceneDelegate.swift */; };
 		9635E53B2778A205009E82D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9635E53A2778A205009E82D4 /* Assets.xcassets */; };
 		9635E53E2778A205009E82D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9635E53C2778A205009E82D4 /* LaunchScreen.storyboard */; };
-		96648C0C277A55F40000138D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 96648C0B277A55F40000138D /* Alamofire */; };
+		96ED95A92786F0E400AC4DDC /* Molecule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96ED95A82786F0E400AC4DDC /* Molecule.swift */; };
+		96ED95AC2786F20D00AC4DDC /* Atom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96ED95AB2786F20D00AC4DDC /* Atom.swift */; };
+		96ED95AF2786F2DA00AC4DDC /* ParserPDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96ED95AE2786F2DA00AC4DDC /* ParserPDB.swift */; };
 		F6162BC02785099F00C31C46 /* AuthentificationContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6162BB42785099F00C31C46 /* AuthentificationContract.swift */; };
 		F6162BC12785099F00C31C46 /* AuthentificationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6162BB62785099F00C31C46 /* AuthentificationAssembly.swift */; };
 		F6162BC22785099F00C31C46 /* AuthentificationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6162BB82785099F00C31C46 /* AuthentificationPresenter.swift */; };
@@ -51,6 +53,9 @@
 		9635E53A2778A205009E82D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9635E53D2778A205009E82D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9635E53F2778A205009E82D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		96ED95A82786F0E400AC4DDC /* Molecule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Molecule.swift; sourceTree = "<group>"; };
+		96ED95AB2786F20D00AC4DDC /* Atom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Atom.swift; sourceTree = "<group>"; };
+		96ED95AE2786F2DA00AC4DDC /* ParserPDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParserPDB.swift; sourceTree = "<group>"; };
 		F6162BB42785099F00C31C46 /* AuthentificationContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthentificationContract.swift; sourceTree = "<group>"; };
 		F6162BB62785099F00C31C46 /* AuthentificationAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthentificationAssembly.swift; sourceTree = "<group>"; };
 		F6162BB82785099F00C31C46 /* AuthentificationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthentificationPresenter.swift; sourceTree = "<group>"; };
@@ -88,7 +93,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96648C0C277A55F40000138D /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,6 +153,22 @@
 				9635E53C2778A205009E82D4 /* LaunchScreen.storyboard */,
 			);
 			path = Base.lproj;
+			sourceTree = "<group>";
+		};
+		96ED95A72786F0BF00AC4DDC /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				96ED95A82786F0E400AC4DDC /* Molecule.swift */,
+				96ED95AB2786F20D00AC4DDC /* Atom.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		96ED95AD2786F2C600AC4DDC /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Builder;
 			sourceTree = "<group>";
 		};
 		F6162BB12785097200C31C46 /* Modules */ = {
@@ -222,8 +242,9 @@
 				F6BCD8E5278527A20045AE29 /* Components */,
 				F6BCD8EA278527A20045AE29 /* View */,
 				F6BCD8EC278527A20045AE29 /* Interactor */,
-				F6BCD8EE278527A20045AE29 /* Entities */,
+				96ED95A72786F0BF00AC4DDC /* Entities */,
 				F6BCD8EF278527A20045AE29 /* Router */,
+				96ED95AD2786F2C600AC4DDC /* Builder */,
 			);
 			path = Protein;
 			sourceTree = "<group>";
@@ -283,15 +304,9 @@
 			isa = PBXGroup;
 			children = (
 				F6BCD8ED278527A20045AE29 /* ProteinInteractor.swift */,
+				96ED95AE2786F2DA00AC4DDC /* ParserPDB.swift */,
 			);
 			path = Interactor;
-			sourceTree = "<group>";
-		};
-		F6BCD8EE278527A20045AE29 /* Entities */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Entities;
 			sourceTree = "<group>";
 		};
 		F6BCD8EF278527A20045AE29 /* Router */ = {
@@ -311,7 +326,6 @@
 				F6BCD8F9278527A20045AE29 /* Components */,
 				F6BCD8FE278527A20045AE29 /* View */,
 				F6BCD900278527A20045AE29 /* Interactor */,
-				F6BCD902278527A20045AE29 /* Entities */,
 				F6BCD903278527A20045AE29 /* Router */,
 			);
 			path = ProteinList;
@@ -376,13 +390,6 @@
 			path = Interactor;
 			sourceTree = "<group>";
 		};
-		F6BCD902278527A20045AE29 /* Entities */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Entities;
-			sourceTree = "<group>";
-		};
 		F6BCD903278527A20045AE29 /* Router */ = {
 			isa = PBXGroup;
 			children = (
@@ -434,7 +441,6 @@
 			);
 			name = "Swifty Proteins";
 			packageProductDependencies = (
-				96648C0B277A55F40000138D /* Alamofire */,
 			);
 			productName = "Swifty Proteins";
 			productReference = 9635E52E2778A202009E82D4 /* Swifty Proteins.app */;
@@ -464,7 +470,6 @@
 			);
 			mainGroup = 9635E5252778A202009E82D4;
 			packageReferences = (
-				96648C0A277A55F40000138D /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 9635E52F2778A202009E82D4 /* Products */;
 			projectDirPath = "";
@@ -504,11 +509,13 @@
 				F6BCD90E278527A20045AE29 /* ProteinRouter.swift in Sources */,
 				F6BCD913278527A20045AE29 /* ProteinListSection.swift in Sources */,
 				F6BCD90C278527A20045AE29 /* ProteinView.swift in Sources */,
+				96ED95AF2786F2DA00AC4DDC /* ParserPDB.swift in Sources */,
 				F6BCD917278527A20045AE29 /* ProteinListInteractor.swift in Sources */,
 				F6BCD92A278532AE0045AE29 /* UITableView+Ext.swift in Sources */,
 				F6BCD91C278527F90045AE29 /* TableViewSectionProtocol.swift in Sources */,
 				F6162BC02785099F00C31C46 /* AuthentificationContract.swift in Sources */,
 				F6BCD910278527A20045AE29 /* ProteinListAssembly.swift in Sources */,
+				96ED95AC2786F20D00AC4DDC /* Atom.swift in Sources */,
 				F6162BC42785099F00C31C46 /* AuthentificationViewController.swift in Sources */,
 				F6BCD918278527A20045AE29 /* ProteinListRouter.swift in Sources */,
 				F6BCD911278527A20045AE29 /* ProteinListPresenter.swift in Sources */,
@@ -524,6 +531,7 @@
 				F6BCD90D278527A20045AE29 /* ProteinInteractor.swift in Sources */,
 				F6BCD914278527A20045AE29 /* ProteinListCellModel.swift in Sources */,
 				F6BCD909278527A20045AE29 /* ProteinCellModel.swift in Sources */,
+				96ED95A92786F0E400AC4DDC /* Molecule.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -719,25 +727,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		96648C0A277A55F40000138D /* XCRemoteSwiftPackageReference "Alamofire" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
-			requirement = {
-				kind = exactVersion;
-				version = 5.4.4;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		96648C0B277A55F40000138D /* Alamofire */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 96648C0A277A55F40000138D /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9635E5262778A202009E82D4 /* Project object */;
 }

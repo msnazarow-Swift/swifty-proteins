@@ -32,11 +32,17 @@ class ProteinPresenter {
 
 // MARK: - View Output (View -> Presenter)
 extension ProteinPresenter: ProteinViewOutput {
-	func viewDidLoad() {}
+	func viewDidLoad() {
+        interactor.getMolecule(name: protein)
+    }
 }
 
 // MARK: - Cell Output (Cell -> Presenter)
 extension ProteinPresenter: ProteinCellOutput {}
 
 // MARK: - Interactor Output (Interactor -> Presenter)
-extension ProteinPresenter: ProteinInteractorOutput {}
+extension ProteinPresenter: ProteinInteractorOutput {
+    func presentMolecule(_ molecule: Molecule) {
+        view?.showMolecule(molecule)
+    }
+}
