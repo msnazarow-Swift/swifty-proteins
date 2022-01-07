@@ -43,10 +43,11 @@ class ProteinListView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        presenter.viewDidLoad()
+        presenter.viewDidLoad(self)
     }
 
     private func setupUI() {
+		title = "Proteins"
 		view.backgroundColor = UIColor(patternImage: UIImage(named: "patternImage")!)
 		setupSearchBar()
         addSubviews()
@@ -58,6 +59,9 @@ class ProteinListView: UIViewController {
 		navigationItem.hidesSearchBarWhenScrolling = false
 		navigationItem.searchController = searchController
 		navigationItem.titleView?.tintColor = .white
+		let randomButton = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(randomButtonTapped))
+		randomButton.title = "Random"
+		navigationItem.setRightBarButton(randomButton, animated: true)
 		definesPresentationContext = false
 	}
 
@@ -73,6 +77,10 @@ class ProteinListView: UIViewController {
 			collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
 		])
 	}
+
+	@objc func randomButtonTapped() {
+		presenter.randomButtonTapped(self)
+	}
 }
 
 // MARK: - View Input (Presenter -> View)
@@ -86,6 +94,6 @@ extension ProteinListView: ProteinListViewInput {
 
 extension ProteinListView: UISearchResultsUpdating {
 	func updateSearchResults(for searchController: UISearchController) {
-		presenter.updateSearchResults(text: searchController.searchBar.text)
+		presenter.updateSearchResults(self, text: searchController.searchBar.text)
 	}
 }

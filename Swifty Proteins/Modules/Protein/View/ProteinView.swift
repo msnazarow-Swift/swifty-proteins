@@ -162,6 +162,10 @@ extension ProteinView: ProteinViewInput {
         )
         return cylinderNode
     }
+
+	func setTitle(_ title: String) {
+		self.title = title
+	}
 }
 
 

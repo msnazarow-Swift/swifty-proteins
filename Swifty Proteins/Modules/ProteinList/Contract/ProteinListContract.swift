@@ -16,8 +16,9 @@ protocol ProteinListViewInput: AnyObject {
 protocol ProteinListViewOutput: AnyObject {
     var dataSource: ProteinListDataSourceInput { get }
 
-	func updateSearchResults(text: String?)
-    func viewDidLoad()
+	func updateSearchResults(_ view: ProteinListViewInput, text: String?)
+    func viewDidLoad(_ view: ProteinListViewInput)
+	func randomButtonTapped(_ view: ProteinListViewInput)
 }
 
 // MARK: - Interactor Input (Presenter -> Interactor)

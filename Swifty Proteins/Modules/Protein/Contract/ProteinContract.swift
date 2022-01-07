@@ -11,6 +11,7 @@ import UIKit
 protocol ProteinViewInput: AnyObject {
     func showMolecule(_: Molecule)
     func reciveError(_ error: String)
+	func setTitle(_ title: String)
 }
 
 // MARK: - View Output (View -> Presenter)
