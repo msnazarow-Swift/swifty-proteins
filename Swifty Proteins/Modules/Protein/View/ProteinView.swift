@@ -15,6 +15,11 @@ class ProteinView: UIViewController {
 		return true
 	}
 
+	private let cameraZPosition = 21
+	private let sphereRadius: CGFloat = 0.2
+	private let cylinderRadius: CGFloat = 0.1
+	private let cylinderColor: UIColor = UIColor(red: 0.53, green: 0.56, blue: 0.56, alpha: 1.00)
+
 	// MARK: - Views
     private lazy var scnView: SCNView = {
         let scnView = SCNView()
@@ -25,13 +30,17 @@ class ProteinView: UIViewController {
         scnView.showsStatistics = true
         // configure the view
         scnView.autoenablesDefaultLighting = true
+		scnView.backgroundColor = .clear
         return scnView
     }()
-    
-    private let cameraZPosition = 21
-    private let sphereRadius: CGFloat = 0.2
-    private let cylinderRadius: CGFloat = 0.1
-    private let cylinderColor: UIColor = UIColor(red: 0.53, green: 0.56, blue: 0.56, alpha: 1.00)
+
+	private lazy var spinner: UIActivityIndicatorView = {
+		let view = UIActivityIndicatorView(style: .large)
+		view.startAnimating()
+		view.translatesAutoresizingMaskIntoConstraints = false
+		return view
+	}()
+
 
     // MARK: - Init
     convenience init(presenter: ProteinViewOutput) {
@@ -47,6 +56,7 @@ class ProteinView: UIViewController {
     }
 
     private func setupUI() {
+		view.backgroundColor = .sceneBackground
 		setupNavigationItem()
         addSubviews()
         setupConstraints()
@@ -58,6 +68,7 @@ class ProteinView: UIViewController {
 	}
 
     private func addSubviews() {
+		view.addSubview(spinner)
         view.addSubview(scnView)
     }
 
@@ -66,7 +77,12 @@ class ProteinView: UIViewController {
             scnView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             scnView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             scnView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            scnView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+            scnView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+
+			spinner.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+			spinner.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+			spinner.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+			spinner.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
     
@@ -86,9 +102,11 @@ extension ProteinView: ProteinViewInput {
     func showMolecule(_ molecule: Molecule) {
         let scene = SCNScene()
         scnView.scene = scene
-        scene.background.contents = UIColor(red: 60/255, green: 75/255, blue: 90/255, alpha: 1)
+		scene.background.contents = UIColor.sceneBackground
         // add molecule on the screen
+		sleep(1)
         fillScene(molecule)
+		spinner.stopAnimating()
     }
     
     

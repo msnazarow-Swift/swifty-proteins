@@ -19,6 +19,7 @@
 		F6162BC22785099F00C31C46 /* AuthentificationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6162BB82785099F00C31C46 /* AuthentificationPresenter.swift */; };
 		F6162BC42785099F00C31C46 /* AuthentificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6162BBB2785099F00C31C46 /* AuthentificationViewController.swift */; };
 		F6162BC62785099F00C31C46 /* AuthentificationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6162BBF2785099F00C31C46 /* AuthentificationRouter.swift */; };
+		F61F3C2327886BD8009FA510 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61F3C2227886BD8009FA510 /* UIColor+Ext.swift */; };
 		F6BCD905278527A20045AE29 /* ProteinContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BCD8DF278527A20045AE29 /* ProteinContract.swift */; };
 		F6BCD906278527A20045AE29 /* ProteinAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BCD8E1278527A20045AE29 /* ProteinAssembly.swift */; };
 		F6BCD907278527A20045AE29 /* ProteinDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BCD8E3278527A20045AE29 /* ProteinDataSource.swift */; };
@@ -61,6 +62,7 @@
 		F6162BB82785099F00C31C46 /* AuthentificationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthentificationPresenter.swift; sourceTree = "<group>"; };
 		F6162BBB2785099F00C31C46 /* AuthentificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthentificationViewController.swift; sourceTree = "<group>"; };
 		F6162BBF2785099F00C31C46 /* AuthentificationRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthentificationRouter.swift; sourceTree = "<group>"; };
+		F61F3C2227886BD8009FA510 /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
 		F6BCD8DF278527A20045AE29 /* ProteinContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProteinContract.swift; sourceTree = "<group>"; };
 		F6BCD8E1278527A20045AE29 /* ProteinAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProteinAssembly.swift; sourceTree = "<group>"; };
 		F6BCD8E3278527A20045AE29 /* ProteinDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProteinDataSource.swift; sourceTree = "<group>"; };
@@ -420,6 +422,7 @@
 			isa = PBXGroup;
 			children = (
 				F6BCD929278532AE0045AE29 /* UITableView+Ext.swift */,
+				F61F3C2227886BD8009FA510 /* UIColor+Ext.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -505,6 +508,7 @@
 				F6BCD90F278527A20045AE29 /* ProteinListContract.swift in Sources */,
 				9635E5322778A202009E82D4 /* AppDelegate.swift in Sources */,
 				F6162BC12785099F00C31C46 /* AuthentificationAssembly.swift in Sources */,
+				F61F3C2327886BD8009FA510 /* UIColor+Ext.swift in Sources */,
 				F6BCD90B278527A20045AE29 /* ProteinSectionModel.swift in Sources */,
 				F6BCD90E278527A20045AE29 /* ProteinRouter.swift in Sources */,
 				F6BCD913278527A20045AE29 /* ProteinListSection.swift in Sources */,

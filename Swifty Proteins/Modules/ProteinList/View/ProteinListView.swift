@@ -52,6 +52,8 @@ class ProteinListView: UIViewController {
     }
 
 	private func setupSearchBar() {
+		navigationController?.setNavigationBarHidden(false, animated: true)
+		navigationItem.hidesSearchBarWhenScrolling = false
 		navigationItem.searchController = searchController
 		navigationItem.titleView?.tintColor = .white
 		definesPresentationContext = false
