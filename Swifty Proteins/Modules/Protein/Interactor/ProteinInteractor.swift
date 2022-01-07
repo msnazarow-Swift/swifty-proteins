@@ -51,7 +51,7 @@ extension ProteinInteractor: ProteinInteractorInput {
 				self.presenter?.reciveError(ProteinInteractorError.httpError(response.statusCode))
 				return
 			}
-			if let fileText = String(data: data, encoding: .utf8) {
+			if let fileText = String(data: data, encoding: .utf8), !fileText.isEmpty {
                 let molecule = self.parser.parsePDB(fileText)
                 self.presenter?.presentMolecule(molecule)
             } else {

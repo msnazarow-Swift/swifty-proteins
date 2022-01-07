@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "UITextView+Placeholder",
+        "repositoryURL": "https://github.com/devxoul/UITextView-Placeholder",
+        "state": {
+          "branch": null,
+          "revision": "5a133b7efc4e8dd9de91c9eada48270d90c83ef0",
+          "version": "1.4.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

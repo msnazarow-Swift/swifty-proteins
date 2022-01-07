@@ -49,12 +49,12 @@ class ProteinListView: UIViewController {
     private func setupUI() {
 		title = "Proteins"
 		view.backgroundColor = UIColor(patternImage: UIImage(named: "patternImage")!)
-		setupSearchBar()
+		setupNavigationItem()
         addSubviews()
         setupConstraints()
     }
 
-	private func setupSearchBar() {
+	private func setupNavigationItem() {
 		navigationController?.setNavigationBarHidden(false, animated: true)
 		navigationItem.hidesSearchBarWhenScrolling = false
 		navigationItem.searchController = searchController

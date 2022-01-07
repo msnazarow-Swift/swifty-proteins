@@ -13,19 +13,16 @@ class ProteinPresenter {
     weak var view: ProteinViewInput?
     let interactor: ProteinInteractorInput
     let router: ProteinRouterInput
-    let dataSource: ProteinDataSourceInput
 	let protein: String
 
     // MARK: Init
     init(
         interactor: ProteinInteractorInput,
         router: ProteinRouterInput,
-        dataSource: ProteinDataSourceInput,
 		protein: String
     ) {
         self.interactor = interactor
         self.router = router
-        self.dataSource = dataSource
 		self.protein = protein
     }
 }
@@ -38,7 +35,7 @@ extension ProteinPresenter: ProteinViewOutput {
     }
 
 	func shareButtonTapped(_ view: ProteinViewInput, image: UIImage) {
-		router.routeToActivity(image: image)
+		router.routeToScreenShot(image: image)
 	}
 }
 

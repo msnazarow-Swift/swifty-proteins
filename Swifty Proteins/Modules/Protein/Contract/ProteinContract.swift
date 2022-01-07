@@ -11,12 +11,12 @@ import UIKit
 protocol ProteinViewInput: AnyObject {
     func showMolecule(_: Molecule)
     func showError(_ error: String)
+	func showMessage(title: String, text: String)
 	func setTitle(_ title: String)
 }
 
 // MARK: - View Output (View -> Presenter)
 protocol ProteinViewOutput: AnyObject {
-    var dataSource: ProteinDataSourceInput { get }
     func viewDidLoad(_ view: ProteinViewInput)
 	func shareButtonTapped(_ view: ProteinViewInput, image: UIImage)
 }
@@ -34,7 +34,7 @@ protocol ProteinInteractorOutput: AnyObject {
 
 // MARK: - Router Input (Presenter -> Router)
 protocol ProteinRouterInput: AnyObject {
-	func routeToActivity(image: UIImage)
+	func routeToScreenShot(image: UIImage)
 }
 
 // MARK: - DataSource Input (Presenter -> DataSource)

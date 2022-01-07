@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -24,13 +24,17 @@
 		F61F3C2D2788875D009FA510 /* UICollectionView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61F3C2C2788875D009FA510 /* UICollectionView+Ext.swift */; };
 		F61F3C312788966B009FA510 /* ProteinListHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61F3C302788966B009FA510 /* ProteinListHeader.swift */; };
 		F61F3C38278897FB009FA510 /* ProteinListHeaderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61F3C37278897FB009FA510 /* ProteinListHeaderModel.swift */; };
+		F61F3C5B2788C8A8009FA510 /* ScreenShotContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61F3C492788C8A8009FA510 /* ScreenShotContract.swift */; };
+		F61F3C5C2788C8A8009FA510 /* ScreenShotAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61F3C4B2788C8A8009FA510 /* ScreenShotAssembly.swift */; };
+		F61F3C5D2788C8A8009FA510 /* ScreenShotPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61F3C4D2788C8A8009FA510 /* ScreenShotPresenter.swift */; };
+		F61F3C622788C8A8009FA510 /* ScreenShotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61F3C552788C8A8009FA510 /* ScreenShotView.swift */; };
+		F61F3C632788C8A8009FA510 /* ScreenShotInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61F3C572788C8A8009FA510 /* ScreenShotInteractor.swift */; };
+		F61F3C642788C8A8009FA510 /* ScreenShotRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61F3C5A2788C8A8009FA510 /* ScreenShotRouter.swift */; };
+		F61F3C6F2788C9F1009FA510 /* UITextView+Placeholder in Frameworks */ = {isa = PBXBuildFile; productRef = F61F3C6E2788C9F1009FA510 /* UITextView+Placeholder */; settings = {ATTRIBUTES = (Required, ); }; };
+		F61F3C7C2788DA71009FA510 /* UIImage+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61F3C7B2788DA71009FA510 /* UIImage+Ext.swift */; };
 		F6BCD905278527A20045AE29 /* ProteinContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BCD8DF278527A20045AE29 /* ProteinContract.swift */; };
 		F6BCD906278527A20045AE29 /* ProteinAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BCD8E1278527A20045AE29 /* ProteinAssembly.swift */; };
-		F6BCD907278527A20045AE29 /* ProteinDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BCD8E3278527A20045AE29 /* ProteinDataSource.swift */; };
 		F6BCD908278527A20045AE29 /* ProteinPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BCD8E4278527A20045AE29 /* ProteinPresenter.swift */; };
-		F6BCD909278527A20045AE29 /* ProteinCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BCD8E7278527A20045AE29 /* ProteinCellModel.swift */; };
-		F6BCD90A278527A20045AE29 /* ProteinCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BCD8E8278527A20045AE29 /* ProteinCell.swift */; };
-		F6BCD90B278527A20045AE29 /* ProteinSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BCD8E9278527A20045AE29 /* ProteinSectionModel.swift */; };
 		F6BCD90C278527A20045AE29 /* ProteinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BCD8EB278527A20045AE29 /* ProteinView.swift */; };
 		F6BCD90D278527A20045AE29 /* ProteinInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BCD8ED278527A20045AE29 /* ProteinInteractor.swift */; };
 		F6BCD90E278527A20045AE29 /* ProteinRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BCD8F0278527A20045AE29 /* ProteinRouter.swift */; };
@@ -71,13 +75,17 @@
 		F61F3C2C2788875D009FA510 /* UICollectionView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Ext.swift"; sourceTree = "<group>"; };
 		F61F3C302788966B009FA510 /* ProteinListHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProteinListHeader.swift; sourceTree = "<group>"; };
 		F61F3C37278897FB009FA510 /* ProteinListHeaderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProteinListHeaderModel.swift; sourceTree = "<group>"; };
+		F61F3C492788C8A8009FA510 /* ScreenShotContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenShotContract.swift; sourceTree = "<group>"; };
+		F61F3C4B2788C8A8009FA510 /* ScreenShotAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenShotAssembly.swift; sourceTree = "<group>"; };
+		F61F3C4D2788C8A8009FA510 /* ScreenShotPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenShotPresenter.swift; sourceTree = "<group>"; };
+		F61F3C552788C8A8009FA510 /* ScreenShotView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenShotView.swift; sourceTree = "<group>"; };
+		F61F3C572788C8A8009FA510 /* ScreenShotInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenShotInteractor.swift; sourceTree = "<group>"; };
+		F61F3C5A2788C8A8009FA510 /* ScreenShotRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenShotRouter.swift; sourceTree = "<group>"; };
+		F61F3C772788D111009FA510 /* Swifty-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Swifty-Bridging-Header.h"; sourceTree = "<group>"; };
+		F61F3C7B2788DA71009FA510 /* UIImage+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ext.swift"; sourceTree = "<group>"; };
 		F6BCD8DF278527A20045AE29 /* ProteinContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProteinContract.swift; sourceTree = "<group>"; };
 		F6BCD8E1278527A20045AE29 /* ProteinAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProteinAssembly.swift; sourceTree = "<group>"; };
-		F6BCD8E3278527A20045AE29 /* ProteinDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProteinDataSource.swift; sourceTree = "<group>"; };
 		F6BCD8E4278527A20045AE29 /* ProteinPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProteinPresenter.swift; sourceTree = "<group>"; };
-		F6BCD8E7278527A20045AE29 /* ProteinCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProteinCellModel.swift; sourceTree = "<group>"; };
-		F6BCD8E8278527A20045AE29 /* ProteinCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProteinCell.swift; sourceTree = "<group>"; };
-		F6BCD8E9278527A20045AE29 /* ProteinSectionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProteinSectionModel.swift; sourceTree = "<group>"; };
 		F6BCD8EB278527A20045AE29 /* ProteinView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProteinView.swift; sourceTree = "<group>"; };
 		F6BCD8ED278527A20045AE29 /* ProteinInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProteinInteractor.swift; sourceTree = "<group>"; };
 		F6BCD8F0278527A20045AE29 /* ProteinRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProteinRouter.swift; sourceTree = "<group>"; };
@@ -103,6 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F61F3C6F2788C9F1009FA510 /* UITextView+Placeholder in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +121,7 @@
 		9635E5252778A202009E82D4 = {
 			isa = PBXGroup;
 			children = (
+				F61F3C772788D111009FA510 /* Swifty-Bridging-Header.h */,
 				9635E5302778A202009E82D4 /* Swifty Proteins */,
 				96E59FB127791D1D0094AD4C /* Supporting Files */,
 				9635E52F2778A202009E82D4 /* Products */,
@@ -186,6 +196,7 @@
 		F6162BB12785097200C31C46 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				F61F3C472788C8A8009FA510 /* ScreenShot */,
 				F6BCD8DD278527A20045AE29 /* Protein */,
 				F6BCD8F1278527A20045AE29 /* ProteinList */,
 				F6162BB22785099F00C31C46 /* Authentification */,
@@ -264,13 +275,81 @@
 			path = ProteinListHeader;
 			sourceTree = "<group>";
 		};
+		F61F3C472788C8A8009FA510 /* ScreenShot */ = {
+			isa = PBXGroup;
+			children = (
+				F61F3C482788C8A8009FA510 /* Contract */,
+				F61F3C4A2788C8A8009FA510 /* Assembly */,
+				F61F3C4C2788C8A8009FA510 /* Presenter */,
+				F61F3C542788C8A8009FA510 /* View */,
+				F61F3C562788C8A8009FA510 /* Interactor */,
+				F61F3C582788C8A8009FA510 /* Entities */,
+				F61F3C592788C8A8009FA510 /* Router */,
+			);
+			path = ScreenShot;
+			sourceTree = "<group>";
+		};
+		F61F3C482788C8A8009FA510 /* Contract */ = {
+			isa = PBXGroup;
+			children = (
+				F61F3C492788C8A8009FA510 /* ScreenShotContract.swift */,
+			);
+			path = Contract;
+			sourceTree = "<group>";
+		};
+		F61F3C4A2788C8A8009FA510 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				F61F3C4B2788C8A8009FA510 /* ScreenShotAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		F61F3C4C2788C8A8009FA510 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				F61F3C4D2788C8A8009FA510 /* ScreenShotPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		F61F3C542788C8A8009FA510 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F61F3C552788C8A8009FA510 /* ScreenShotView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F61F3C562788C8A8009FA510 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				F61F3C572788C8A8009FA510 /* ScreenShotInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		F61F3C582788C8A8009FA510 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		F61F3C592788C8A8009FA510 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				F61F3C5A2788C8A8009FA510 /* ScreenShotRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
 		F6BCD8DD278527A20045AE29 /* Protein */ = {
 			isa = PBXGroup;
 			children = (
 				F6BCD8DE278527A20045AE29 /* Contract */,
 				F6BCD8E0278527A20045AE29 /* Assembly */,
 				F6BCD8E2278527A20045AE29 /* Presenter */,
-				F6BCD8E5278527A20045AE29 /* Components */,
 				F6BCD8EA278527A20045AE29 /* View */,
 				F6BCD8EC278527A20045AE29 /* Interactor */,
 				96ED95A72786F0BF00AC4DDC /* Entities */,
@@ -299,28 +378,9 @@
 		F6BCD8E2278527A20045AE29 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				F6BCD8E3278527A20045AE29 /* ProteinDataSource.swift */,
 				F6BCD8E4278527A20045AE29 /* ProteinPresenter.swift */,
 			);
 			path = Presenter;
-			sourceTree = "<group>";
-		};
-		F6BCD8E5278527A20045AE29 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				F6BCD8E6278527A20045AE29 /* UITableViewComponents */,
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
-		F6BCD8E6278527A20045AE29 /* UITableViewComponents */ = {
-			isa = PBXGroup;
-			children = (
-				F6BCD8E7278527A20045AE29 /* ProteinCellModel.swift */,
-				F6BCD8E8278527A20045AE29 /* ProteinCell.swift */,
-				F6BCD8E9278527A20045AE29 /* ProteinSectionModel.swift */,
-			);
-			path = UITableViewComponents;
 			sourceTree = "<group>";
 		};
 		F6BCD8EA278527A20045AE29 /* View */ = {
@@ -443,6 +503,7 @@
 				F6BCD929278532AE0045AE29 /* UITableView+Ext.swift */,
 				F61F3C2227886BD8009FA510 /* UIColor+Ext.swift */,
 				F61F3C2C2788875D009FA510 /* UICollectionView+Ext.swift */,
+				F61F3C7B2788DA71009FA510 /* UIImage+Ext.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -464,6 +525,7 @@
 			);
 			name = "Swifty Proteins";
 			packageProductDependencies = (
+				F61F3C6E2788C9F1009FA510 /* UITextView+Placeholder */,
 			);
 			productName = "Swifty Proteins";
 			productReference = 9635E52E2778A202009E82D4 /* Swifty Proteins.app */;
@@ -493,6 +555,7 @@
 			);
 			mainGroup = 9635E5252778A202009E82D4;
 			packageReferences = (
+				F61F3C6D2788C9F1009FA510 /* XCRemoteSwiftPackageReference "UITextView-Placeholder" */,
 			);
 			productRefGroup = 9635E52F2778A202009E82D4 /* Products */;
 			projectDirPath = "";
@@ -521,16 +584,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F61F3C5B2788C8A8009FA510 /* ScreenShotContract.swift in Sources */,
 				F6BCD916278527A20045AE29 /* ProteinListView.swift in Sources */,
+				F61F3C632788C8A8009FA510 /* ScreenShotInteractor.swift in Sources */,
 				F6BCD912278527A20045AE29 /* ProteinListDataSource.swift in Sources */,
 				F61F3C38278897FB009FA510 /* ProteinListHeaderModel.swift in Sources */,
 				F6BCD920278528230045AE29 /* ModelRepresentable.swift in Sources */,
 				F6162BC22785099F00C31C46 /* AuthentificationPresenter.swift in Sources */,
 				F6BCD90F278527A20045AE29 /* ProteinListContract.swift in Sources */,
 				9635E5322778A202009E82D4 /* AppDelegate.swift in Sources */,
+				F61F3C622788C8A8009FA510 /* ScreenShotView.swift in Sources */,
 				F6162BC12785099F00C31C46 /* AuthentificationAssembly.swift in Sources */,
 				F61F3C2327886BD8009FA510 /* UIColor+Ext.swift in Sources */,
-				F6BCD90B278527A20045AE29 /* ProteinSectionModel.swift in Sources */,
+				F61F3C5D2788C8A8009FA510 /* ScreenShotPresenter.swift in Sources */,
 				F6BCD90E278527A20045AE29 /* ProteinRouter.swift in Sources */,
 				F6BCD913278527A20045AE29 /* ProteinListSection.swift in Sources */,
 				F6BCD90C278527A20045AE29 /* ProteinView.swift in Sources */,
@@ -539,25 +605,25 @@
 				F6BCD917278527A20045AE29 /* ProteinListInteractor.swift in Sources */,
 				96ED9F9527878B0600AC4DDC /* CPKColor.swift in Sources */,
 				F6BCD92A278532AE0045AE29 /* UITableView+Ext.swift in Sources */,
+				F61F3C7C2788DA71009FA510 /* UIImage+Ext.swift in Sources */,
 				F6BCD91C278527F90045AE29 /* SectionProtocol.swift in Sources */,
 				F6162BC02785099F00C31C46 /* AuthentificationContract.swift in Sources */,
 				F6BCD910278527A20045AE29 /* ProteinListAssembly.swift in Sources */,
 				96ED95AC2786F20D00AC4DDC /* Atom.swift in Sources */,
 				F6162BC42785099F00C31C46 /* AuthentificationViewController.swift in Sources */,
 				F6BCD918278527A20045AE29 /* ProteinListRouter.swift in Sources */,
+				F61F3C5C2788C8A8009FA510 /* ScreenShotAssembly.swift in Sources */,
 				F6BCD911278527A20045AE29 /* ProteinListPresenter.swift in Sources */,
 				F6BCD915278527A20045AE29 /* ProteinListCell.swift in Sources */,
 				F6BCD906278527A20045AE29 /* ProteinAssembly.swift in Sources */,
 				9635E5342778A202009E82D4 /* SceneDelegate.swift in Sources */,
+				F61F3C642788C8A8009FA510 /* ScreenShotRouter.swift in Sources */,
 				F6162BC62785099F00C31C46 /* AuthentificationRouter.swift in Sources */,
-				F6BCD90A278527A20045AE29 /* ProteinCell.swift in Sources */,
-				F6BCD907278527A20045AE29 /* ProteinDataSource.swift in Sources */,
 				F6BCD908278527A20045AE29 /* ProteinPresenter.swift in Sources */,
 				F6BCD925278529190045AE29 /* CellIdentifiable.swift in Sources */,
 				F6BCD905278527A20045AE29 /* ProteinContract.swift in Sources */,
 				F6BCD90D278527A20045AE29 /* ProteinInteractor.swift in Sources */,
 				F6BCD914278527A20045AE29 /* ProteinListCellModel.swift in Sources */,
-				F6BCD909278527A20045AE29 /* ProteinCellModel.swift in Sources */,
 				F61F3C2D2788875D009FA510 /* UICollectionView+Ext.swift in Sources */,
 				96ED95A92786F0E400AC4DDC /* Molecule.swift in Sources */,
 			);
@@ -708,6 +774,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "s21.Swifty-Proteins";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Swifty-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -728,6 +795,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "s21.Swifty-Proteins";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Swifty-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -755,6 +823,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F61F3C6D2788C9F1009FA510 /* XCRemoteSwiftPackageReference "UITextView-Placeholder" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/UITextView-Placeholder";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.4.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F61F3C6E2788C9F1009FA510 /* UITextView+Placeholder */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F61F3C6D2788C9F1009FA510 /* XCRemoteSwiftPackageReference "UITextView-Placeholder" */;
+			productName = "UITextView+Placeholder";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9635E5262778A202009E82D4 /* Project object */;
 }

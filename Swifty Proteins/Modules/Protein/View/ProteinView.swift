@@ -29,7 +29,7 @@ class ProteinView: UIViewController {
         scnView.autoenablesDefaultLighting = true
         scnView.backgroundColor = .clear
         scnView.scene = SCNScene()
-        scnView.scene?.background.contents = UIColor.sceneBackground
+		scnView.scene?.background.contents = UIColor.sceneBackground.withAlphaComponent(0.1)
         return scnView
     }()
 
@@ -61,8 +61,8 @@ class ProteinView: UIViewController {
     }
 
 	private func setupNavigationItem() {
-		let shareButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareButtonTapped))
-		navigationItem.setRightBarButton(shareButton, animated: true)
+		let screenshotButton = UIBarButtonItem(barButtonSystemItem: .camera, target: self, action: #selector(shareButtonTapped))
+		navigationItem.setRightBarButton(screenshotButton, animated: true)
 	}
 
     private func addSubviews() {
@@ -85,8 +85,9 @@ class ProteinView: UIViewController {
     }
 
 	@objc func shareButtonTapped() {
-		let image = scnView.snapshot()
-		presenter.shareButtonTapped(self, image: image)
+		if let image = scnView.snapshot().trimmingTransparentPixels(maximumAlphaChannel: 150) {
+			presenter.shareButtonTapped(self, image: image)
+		}
 	}
 }
 
@@ -161,6 +162,13 @@ extension ProteinView: ProteinViewInput {
 
 	func showError(_ message: String) {
 		let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+		alert.addAction(UIAlertAction(title: "OK", style: .default))
+		present(alert, animated: true)
+		spinner.stopAnimating()
+	}
+
+	func showMessage(title: String, text: String) {
+		let alert = UIAlertController(title: title, message: text, preferredStyle: .alert)
 		alert.addAction(UIAlertAction(title: "OK", style: .default))
 		present(alert, animated: true)
 		spinner.stopAnimating()

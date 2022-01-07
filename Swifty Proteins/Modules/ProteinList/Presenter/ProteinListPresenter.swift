@@ -64,7 +64,7 @@ extension ProteinListPresenter: ProteinListViewOutput {
 	}
 
 	func updateSearchResults(_ view: ProteinListViewInput, text: String?) {
-		if  let text = text, !text.isEmpty {
+		if  let text = text?.uppercased(), !text.isEmpty {
 			let filteredProteins = proteins.filter { $0.starts(with: text) }
 			dataSource.updateForSections(generateAlphaSorted(proteins: filteredProteins).map { ProteinListSection($1) })
 			dataSource.updateForHeaders(generateAlphaSorted(proteins: filteredProteins).map { ProteinListHeaderModel(title: String($0.key)) })
