@@ -17,6 +17,7 @@ class ProteinListView: UIViewController {
 		let layout = UICollectionViewFlowLayout()
 		let collectionView = UICollectionView(frame: CGRect(), collectionViewLayout: layout)
 		collectionView.register(ProteinListCell.self)
+		collectionView.register(ProteinListHeader.self)
 		collectionView.dataSource = presenter.dataSource
 		collectionView.delegate = presenter.dataSource
 		collectionView.backgroundColor = .clear

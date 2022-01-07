@@ -11,7 +11,8 @@ class ProteinListDataSource: NSObject {
     // MARK: Properties
     weak var presenter: (ProteinListCellOutput & ProteinListDataSourceOutput)?
     private var sections: [SectionProtocol] = []
-	private var headers: [String] = []
+	private var headers: [ProteinListHeaderModel] = []
+	let gap: CGFloat = 10
 }
 
 // MARK: - DataSource Input (Presenter -> DataSource)
@@ -22,6 +23,10 @@ extension ProteinListDataSource: ProteinListDataSourceInput {
 
 	func numberOfSections(in _: UITableView) -> Int {
 		return sections.count
+	}
+
+	func updateForHeaders(_ headers: [ProteinListHeaderModel]) {
+		self.headers = headers
 	}
 }
 
@@ -49,9 +54,29 @@ extension ProteinListDataSource {
 
 // MARK: - UITableViewDelegate
 extension ProteinListDataSource {
-//	func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-//
-//	}
+	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+		let indexPath = IndexPath(row: 0, section: section)
+		let headerView = self.collectionView(collectionView, viewForSupplementaryElementOfKind: UICollectionView.elementKindSectionHeader, at: indexPath)
+		return headerView.systemLayoutSizeFitting(
+			CGSize(width: collectionView.frame.width, height: UIView.layoutFittingExpandedSize.height),
+			withHorizontalFittingPriority: .required,
+			verticalFittingPriority: .fittingSizeLevel
+		)
+	}
+
+	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+		UIEdgeInsets(top: gap, left: gap, bottom: gap, right: gap)
+	}
+
+	func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+		let model = headers[indexPath.section]
+		guard let cell = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: model.identifier, for: indexPath) as? (UICollectionReusableView & CellIdentifiable) else {
+			return UICollectionReusableView()
+		}
+		cell.presenter = presenter
+		cell.configure(with: model)
+		return cell
+	}
 
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 		guard let model = sections[indexPath.section].rows[indexPath.row] as? ProteinListCellModel else { return }

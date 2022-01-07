@@ -32,8 +32,9 @@ protocol ProteinListRouterInput: AnyObject {
 }
 
 // MARK: - DataSource Input (Presenter -> DataSource)
-protocol ProteinListDataSourceInput: UICollectionViewDataSource,UICollectionViewDelegate {
+protocol ProteinListDataSourceInput: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func updateForSections(_ sections: [SectionProtocol])
+	func updateForHeaders(_ headers: [ProteinListHeaderModel])
 }
 
 // MARK: - DataSource Input (DataSource -> Presenter)
