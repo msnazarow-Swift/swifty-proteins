@@ -32,8 +32,8 @@ protocol ProteinListRouterInput: AnyObject {
 }
 
 // MARK: - DataSource Input (Presenter -> DataSource)
-protocol ProteinListDataSourceInput: UITableViewDataSource, UITableViewDelegate {
-    func updateForSections(_ sections: [TableViewSectionProtocol])
+protocol ProteinListDataSourceInput: UICollectionViewDataSource,UICollectionViewDelegate {
+    func updateForSections(_ sections: [SectionProtocol])
 }
 
 // MARK: - DataSource Input (DataSource -> Presenter)
@@ -42,4 +42,4 @@ protocol ProteinListDataSourceOutput {
 }
 
 // MARK: - Cell Output (Cell -> Presenter)
-protocol ProteinListCellOutput: AnyObject {}
+protocol ProteinListCellOutput: CellOutput {}

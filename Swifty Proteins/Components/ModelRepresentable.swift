@@ -9,9 +9,9 @@
 import UIKit
 
 protocol ModelRepresentable {
-    var model: Identifiable? { get set }
+    var model: ModelIdentifiable? { get set }
 }
 
-protocol Identifiable {
+protocol ModelIdentifiable {
     var identifier: String { get }
 }

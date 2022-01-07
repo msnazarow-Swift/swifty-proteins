@@ -7,8 +7,8 @@
 
 import Foundation
 
-final class ProteinSectionModel: TableViewSectionProtocol {
-    var rows: [Identifiable] = []
+final class ProteinSectionModel: SectionProtocol {
+    var rows: [ModelIdentifiable] = []
 
     init(_ properties: [Any]) {
         properties.forEach {

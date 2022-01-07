@@ -10,12 +10,12 @@ import UIKit
 class ProteinDataSource: NSObject {
     // MARK: Properties
     weak var presenter: ProteinCellOutput?
-    private var sections: [TableViewSectionProtocol] = []
+    private var sections: [SectionProtocol] = []
 }
 
 // MARK: - DataSource Input (Presenter -> DataSource)
 extension ProteinDataSource: ProteinDataSourceInput {
-	func updateForSections(_ sections: [TableViewSectionProtocol]) {
+	func updateForSections(_ sections: [SectionProtocol]) {
 		self.sections = sections
 	}
 
@@ -32,11 +32,11 @@ extension ProteinDataSource {
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let model = sections[indexPath.section].rows[indexPath.row]
-		guard let cell = tableView.dequeueReusableCell(withIdentifier: model.identifier, for: indexPath) as? CellIdentifiable else {
+		guard let cell = tableView.dequeueReusableCell(withIdentifier: model.identifier, for: indexPath) as? (CellIdentifiable & UITableViewCell) else {
 			return UITableViewCell()
 		}
 		cell.presenter = presenter
-		cell.model = model
+		cell.configure(with: model)
 		return cell
 	}
 }

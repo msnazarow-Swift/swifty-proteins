@@ -13,14 +13,15 @@ class ProteinListView: UIViewController {
     var presenter: ProteinListViewOutput!
 
 	// MARK: - Views
-	lazy var tableView: UITableView = {
-		let tableView = UITableView()
-		tableView.register(ProteinListCell.self)
-		tableView.dataSource = presenter.dataSource
-		tableView.delegate = presenter.dataSource
-		tableView.backgroundColor = .clear
-		tableView.translatesAutoresizingMaskIntoConstraints = false
-		return tableView
+	lazy var collectionView: UICollectionView = {
+		let layout = UICollectionViewFlowLayout()
+		let collectionView = UICollectionView(frame: CGRect(), collectionViewLayout: layout)
+		collectionView.register(ProteinListCell.self)
+		collectionView.dataSource = presenter.dataSource
+		collectionView.delegate = presenter.dataSource
+		collectionView.backgroundColor = .clear
+		collectionView.translatesAutoresizingMaskIntoConstraints = false
+		return collectionView
 	}()
 
 	lazy var searchController: UISearchController = {
@@ -60,15 +61,15 @@ class ProteinListView: UIViewController {
 	}
 
     private func addSubviews() {
-		view.addSubview(tableView)
+		view.addSubview(collectionView)
 	}
 
     private func setupConstraints() {
 		NSLayoutConstraint.activate([
-			tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-			tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-			tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-			tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+			collectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+			collectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+			collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+			collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
 		])
 	}
 }
@@ -77,7 +78,7 @@ class ProteinListView: UIViewController {
 extension ProteinListView: ProteinListViewInput {
 	func tableViewReload() {
 		DispatchQueue.main.async {
-			self.tableView.reloadData()
+			self.collectionView.reloadData()
 		}
 	}
 }
