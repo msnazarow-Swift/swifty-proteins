@@ -10,7 +10,7 @@ import UIKit
 // MARK: - View Input (Presenter -> View)
 protocol ProteinViewInput: AnyObject {
     func showMolecule(_: Molecule)
-    func reciveError(_ error: String)
+    func showError(_ error: String)
 	func setTitle(_ title: String)
 }
 

@@ -38,10 +38,6 @@ extension ProteinPresenter: ProteinViewOutput {
     }
 
 	func shareButtonTapped(_ view: ProteinViewInput, image: UIImage) {
-//		guard let image = image else {
-//			view.reciveError("No data to share")
-//			return
-//		}
 		router.routeToActivity(image: image)
 	}
 }
@@ -54,7 +50,7 @@ extension ProteinPresenter: ProteinInteractorOutput {
     func reciveError(_ error: Error) {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
-            self.view?.reciveError(error.localizedDescription)
+            self.view?.showError(error.localizedDescription)
         }
     }
     

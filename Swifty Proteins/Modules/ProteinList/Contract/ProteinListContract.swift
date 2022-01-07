@@ -9,7 +9,8 @@ import UIKit
 
 // MARK: - View Input (Presenter -> View)
 protocol ProteinListViewInput: AnyObject {
-	func tableViewReload() 
+	func tableViewReload()
+	func showError(_ error: String)
 }
 
 // MARK: - View Output (View -> Presenter)
