@@ -15,6 +15,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 		window = UIWindow(windowScene: windowScene)
 		window?.overrideUserInterfaceStyle = .dark
 		let navigation = UINavigationController(rootViewController: AuthentificationAssembly.createModule())
+		navigation.setNavigationBarHidden(true, animated: true)
+		navigation.view.backgroundColor = .clear
 		navigation.navigationBar.barTintColor = .clear
         window?.rootViewController = navigation
         window?.makeKeyAndVisible()
