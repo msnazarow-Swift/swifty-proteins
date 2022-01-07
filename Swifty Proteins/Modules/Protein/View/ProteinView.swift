@@ -95,10 +95,6 @@ class ProteinView: UIViewController {
 
 // MARK: - View Input (Presenter -> View)
 extension ProteinView: ProteinViewInput {
-    func reciveError(_ error: String) {
-        // FIXME: - Обработчик ошибок
-    }
-    
     func showMolecule(_ molecule: Molecule) {
         let scene = SCNScene()
         scnView.scene = scene
@@ -165,6 +161,13 @@ extension ProteinView: ProteinViewInput {
 
 	func setTitle(_ title: String) {
 		self.title = title
+	}
+
+	func showError(_ message: String) {
+		let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+		alert.addAction(UIAlertAction(title: "OK", style: .default))
+		present(alert, animated: true)
+		spinner.stopAnimating()
 	}
 }
 

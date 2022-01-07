@@ -16,23 +16,46 @@ class ProteinInteractor {
     }
 }
 
+enum ProteinInteractorError: LocalizedError {
+	case nodata
+	case httpError(Int)
+	case dataNotValid
+
+	public var errorDescription: String? {
+		switch self {
+		case .nodata:
+			return "No data"
+		case .dataNotValid:
+			return "Data is not valid for parsing"
+		case let .httpError(code):
+			return "Http Error \(code) code"
+		}
+	}
+}
+
 // MARK: - Interactor Input (Presenter -> Interactor)
 extension ProteinInteractor: ProteinInteractorInput {
     func getMolecule(name: String) {
         let urlLigands = URL(string: "http://files.rcsb.org/ligands/view/\(name)_ideal.pdb")!
         URLSession.shared.dataTask(with: urlLigands) { [weak self] data, response, error in
-            if data != nil {
-                guard let self = self,
-                      let data = data,
-                      let fileText = String(data: data, encoding: .utf8)
-                else { return }
+			guard let self = self else { return }
+			if let error = error {
+				self.presenter?.reciveError(error)
+				return
+			}
+			guard let data = data, let response = response as? HTTPURLResponse else {
+				self.presenter?.reciveError(ProteinInteractorError.nodata)
+				return
+			}
+			if !Array(200..<300).contains(response.statusCode) {
+				self.presenter?.reciveError(ProteinInteractorError.httpError(response.statusCode))
+				return
+			}
+			if let fileText = String(data: data, encoding: .utf8) {
                 let molecule = self.parser.parsePDB(fileText)
                 self.presenter?.presentMolecule(molecule)
             } else {
-                guard let self = self,
-                      let error = error
-                else { return }
-                self.presenter?.reciveError(error)
+				self.presenter?.reciveError(ProteinInteractorError.dataNotValid)
             }
         }.resume()
     }

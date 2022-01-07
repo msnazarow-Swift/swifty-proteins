@@ -34,7 +34,12 @@ extension ProteinListPresenter: ProteinListViewOutput {
 		guard
 			let filepath = Bundle.main.path(forResource: "ligands", ofType: "txt"),
 			let proteins = try? String(contentsOfFile: filepath).components(separatedBy: .newlines)
-		else { return }
+		else {
+			DispatchQueue.main.async {
+				view.showError("No ligands file found")
+			}
+			return
+		}
 		self.proteins = proteins.compactMap{ $0.isEmpty ? nil : $0 }
 
 		dataSource.updateForSections(generateAlphaSorted(proteins: proteins).map { ProteinListSection($1) })

@@ -90,6 +90,12 @@ extension ProteinListView: ProteinListViewInput {
 			self.collectionView.reloadData()
 		}
 	}
+
+	func showError(_ message: String) {
+		let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+		alert.addAction(UIAlertAction(title: "OK", style: .default))
+		present(alert, animated: true)
+	}
 }
 
 extension ProteinListView: UISearchResultsUpdating {
