@@ -16,8 +16,9 @@ protocol ProteinListViewInput: AnyObject {
 protocol ProteinListViewOutput: AnyObject {
     var dataSource: ProteinListDataSourceInput { get }
 
-	func updateSearchResults(text: String?)
-    func viewDidLoad()
+	func updateSearchResults(_ view: ProteinListViewInput, text: String?)
+    func viewDidLoad(_ view: ProteinListViewInput)
+	func randomButtonTapped(_ view: ProteinListViewInput)
 }
 
 // MARK: - Interactor Input (Presenter -> Interactor)
@@ -32,8 +33,9 @@ protocol ProteinListRouterInput: AnyObject {
 }
 
 // MARK: - DataSource Input (Presenter -> DataSource)
-protocol ProteinListDataSourceInput: UITableViewDataSource, UITableViewDelegate {
-    func updateForSections(_ sections: [TableViewSectionProtocol])
+protocol ProteinListDataSourceInput: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func updateForSections(_ sections: [SectionProtocol])
+	func updateForHeaders(_ headers: [ProteinListHeaderModel])
 }
 
 // MARK: - DataSource Input (DataSource -> Presenter)
@@ -42,4 +44,4 @@ protocol ProteinListDataSourceOutput {
 }
 
 // MARK: - Cell Output (Cell -> Presenter)
-protocol ProteinListCellOutput: AnyObject {}
+protocol ProteinListCellOutput: CellOutput {}

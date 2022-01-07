@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct ProteinListCellModel: Identifiable {
+struct ProteinListCellModel: ModelIdentifiable {
 	let identifier = "ProteinListCell"
 	let title: String
 

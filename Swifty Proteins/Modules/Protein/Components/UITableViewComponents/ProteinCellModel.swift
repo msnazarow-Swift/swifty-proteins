@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct ProteinCellModel: Identifiable {
+struct ProteinCellModel: ModelIdentifiable {
 	let identifier = "ProteinCell"
 
 	init(_ property: Any) {

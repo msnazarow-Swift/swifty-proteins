@@ -30,23 +30,49 @@ class ProteinListPresenter {
 
 // MARK: - View Output (View -> Presenter)
 extension ProteinListPresenter: ProteinListViewOutput {
-	func viewDidLoad() {
+	func viewDidLoad(_ view: ProteinListViewInput) {
 		guard
 			let filepath = Bundle.main.path(forResource: "ligands", ofType: "txt"),
 			let proteins = try? String(contentsOfFile: filepath).components(separatedBy: .newlines)
 		else { return }
-		self.proteins = proteins
-		dataSource.updateForSections([ProteinListSection(proteins)])
+		self.proteins = proteins.compactMap{ $0.isEmpty ? nil : $0 }
+
+		dataSource.updateForSections(generateAlphaSorted(proteins: proteins).map { ProteinListSection($1) })
+		dataSource.updateForHeaders(generateAlphaSorted(proteins: proteins).map { ProteinListHeaderModel(title: String($0.key)) })
+		view.tableViewReload()
 	}
 
-	func updateSearchResults(text: String?) {
+	private func generateAlphaSorted(proteins: [String]) -> [Dictionary<Character, [String]>.Element] {
+		var alphabet: [Character: [String]] = [:]
+		for protein in proteins {
+			guard let ch = protein.first else { continue }
+			if alphabet[ch] == nil {
+				alphabet[ch] = [protein]
+			} else {
+				alphabet[ch]?.append(protein)
+			}
+		}
+		for (key, value) in alphabet {
+			alphabet[key] = value.sorted()
+		}
+		return alphabet.sorted { item1, item2 in item1.key < item2.key }
+	}
+
+	func updateSearchResults(_ view: ProteinListViewInput, text: String?) {
 		if  let text = text, !text.isEmpty {
 			let filteredProteins = proteins.filter { $0.starts(with: text) }
-			dataSource.updateForSections([ProteinListSection(filteredProteins)])
+			dataSource.updateForSections(generateAlphaSorted(proteins: filteredProteins).map { ProteinListSection($1) })
+			dataSource.updateForHeaders(generateAlphaSorted(proteins: filteredProteins).map { ProteinListHeaderModel(title: String($0.key)) })
 		} else {
-			dataSource.updateForSections([ProteinListSection(proteins)])
+			dataSource.updateForSections(generateAlphaSorted(proteins: proteins).map { ProteinListSection($1) })
+			dataSource.updateForHeaders(generateAlphaSorted(proteins: proteins).map { ProteinListHeaderModel(title: String($0.key)) })
 		}
-		view?.tableViewReload()
+		view.tableViewReload()
+	}
+
+	func randomButtonTapped(_ view: ProteinListViewInput) {
+		guard let protein = proteins.randomElement() else { return }
+		router.routeToProtein(protein)
 	}
 }
 

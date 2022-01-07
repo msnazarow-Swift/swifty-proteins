@@ -7,7 +7,10 @@
 
 import UIKit
 
-class ProteinCell: CellIdentifiable {
+class ProteinCell: UITableViewCell, CellIdentifiable {
+	weak var presenter: CellOutput?
+	var model: ModelIdentifiable?
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
     }
@@ -16,7 +19,7 @@ class ProteinCell: CellIdentifiable {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override func updateViews() {
+	func updateViews() {
         guard let model = model as? ProteinCellModel else { return }
 
     }

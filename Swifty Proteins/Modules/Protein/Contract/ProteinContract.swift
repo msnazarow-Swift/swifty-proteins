@@ -11,6 +11,7 @@ import UIKit
 protocol ProteinViewInput: AnyObject {
     func showMolecule(_: Molecule)
     func reciveError(_ error: String)
+	func setTitle(_ title: String)
 }
 
 // MARK: - View Output (View -> Presenter)
@@ -38,8 +39,8 @@ protocol ProteinRouterInput: AnyObject {
 
 // MARK: - DataSource Input (Presenter -> DataSource)
 protocol ProteinDataSourceInput: UITableViewDataSource {
-    func updateForSections(_ sections: [TableViewSectionProtocol])
+    func updateForSections(_ sections: [SectionProtocol])
 }
 
 // MARK: - Cell Output (Cell -> Presenter)
-protocol ProteinCellOutput: AnyObject {}
+protocol ProteinCellOutput: CellOutput {}

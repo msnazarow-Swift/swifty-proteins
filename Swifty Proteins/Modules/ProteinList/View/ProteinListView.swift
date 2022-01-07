@@ -13,14 +13,16 @@ class ProteinListView: UIViewController {
     var presenter: ProteinListViewOutput!
 
 	// MARK: - Views
-	lazy var tableView: UITableView = {
-		let tableView = UITableView()
-		tableView.register(ProteinListCell.self)
-		tableView.dataSource = presenter.dataSource
-		tableView.delegate = presenter.dataSource
-		tableView.backgroundColor = .clear
-		tableView.translatesAutoresizingMaskIntoConstraints = false
-		return tableView
+	lazy var collectionView: UICollectionView = {
+		let layout = UICollectionViewFlowLayout()
+		let collectionView = UICollectionView(frame: CGRect(), collectionViewLayout: layout)
+		collectionView.register(ProteinListCell.self)
+		collectionView.register(ProteinListHeader.self)
+		collectionView.dataSource = presenter.dataSource
+		collectionView.delegate = presenter.dataSource
+		collectionView.backgroundColor = .clear
+		collectionView.translatesAutoresizingMaskIntoConstraints = false
+		return collectionView
 	}()
 
 	lazy var searchController: UISearchController = {
@@ -41,10 +43,11 @@ class ProteinListView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        presenter.viewDidLoad()
+        presenter.viewDidLoad(self)
     }
 
     private func setupUI() {
+		title = "Proteins"
 		view.backgroundColor = UIColor(patternImage: UIImage(named: "patternImage")!)
 		setupSearchBar()
         addSubviews()
@@ -56,20 +59,27 @@ class ProteinListView: UIViewController {
 		navigationItem.hidesSearchBarWhenScrolling = false
 		navigationItem.searchController = searchController
 		navigationItem.titleView?.tintColor = .white
+		let randomButton = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(randomButtonTapped))
+		randomButton.title = "Random"
+		navigationItem.setRightBarButton(randomButton, animated: true)
 		definesPresentationContext = false
 	}
 
     private func addSubviews() {
-		view.addSubview(tableView)
+		view.addSubview(collectionView)
 	}
 
     private func setupConstraints() {
 		NSLayoutConstraint.activate([
-			tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-			tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-			tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-			tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+			collectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+			collectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+			collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+			collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
 		])
+	}
+
+	@objc func randomButtonTapped() {
+		presenter.randomButtonTapped(self)
 	}
 }
 
@@ -77,13 +87,13 @@ class ProteinListView: UIViewController {
 extension ProteinListView: ProteinListViewInput {
 	func tableViewReload() {
 		DispatchQueue.main.async {
-			self.tableView.reloadData()
+			self.collectionView.reloadData()
 		}
 	}
 }
 
 extension ProteinListView: UISearchResultsUpdating {
 	func updateSearchResults(for searchController: UISearchController) {
-		presenter.updateSearchResults(text: searchController.searchBar.text)
+		presenter.updateSearchResults(self, text: searchController.searchBar.text)
 	}
 }

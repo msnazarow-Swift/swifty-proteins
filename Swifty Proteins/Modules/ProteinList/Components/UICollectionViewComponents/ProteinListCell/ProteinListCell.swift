@@ -7,7 +7,10 @@
 
 import UIKit
 
-class ProteinListCell: CellIdentifiable {
+class ProteinListCell: UICollectionViewCell, CellIdentifiable {
+	weak var presenter: CellOutput?
+	var model: ModelIdentifiable?
+
 	let titleLabel: UILabel = {
 		let label = UILabel()
 		label.translatesAutoresizingMaskIntoConstraints = false
@@ -17,14 +20,16 @@ class ProteinListCell: CellIdentifiable {
 		return label
 	}()
 
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
+	override init(frame: CGRect) {
+		super.init(frame: frame)
 		setupUI()
-    }
+	}
 
 	func setupUI() {
-		selectionStyle = .none
-		backgroundColor = .clear
+//		selectionStyle = .none
+		backgroundColor = UIColor.tertiarySystemBackground.withAlphaComponent(0.7)
+		layer.cornerRadius = 10
+		clipsToBounds = true
 		addSubviews()
 		setupConstraints()
 	}
@@ -47,7 +52,7 @@ class ProteinListCell: CellIdentifiable {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override func updateViews() {
+	func updateViews() {
         guard let model = model as? ProteinListCellModel else { return }
 		titleLabel.text = model.title
     }
