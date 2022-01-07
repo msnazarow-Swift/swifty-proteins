@@ -8,5 +8,5 @@
 import UIKit
 
 extension UIColor {
-	static let sceneBackground = UIColor(red: 60/255, green: 75/255, blue: 90/255, alpha: 1)
+	static let sceneBackground = UIColor(red: 0.20, green: 0.20, blue: 0.22, alpha: 1.00)
 }

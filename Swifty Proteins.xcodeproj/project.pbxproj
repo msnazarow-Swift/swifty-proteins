@@ -14,6 +14,7 @@
 		96ED95A92786F0E400AC4DDC /* Molecule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96ED95A82786F0E400AC4DDC /* Molecule.swift */; };
 		96ED95AC2786F20D00AC4DDC /* Atom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96ED95AB2786F20D00AC4DDC /* Atom.swift */; };
 		96ED95AF2786F2DA00AC4DDC /* ParserPDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96ED95AE2786F2DA00AC4DDC /* ParserPDB.swift */; };
+		96ED9F9527878B0600AC4DDC /* CPKColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96ED9F9427878B0600AC4DDC /* CPKColor.swift */; };
 		F6162BC02785099F00C31C46 /* AuthentificationContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6162BB42785099F00C31C46 /* AuthentificationContract.swift */; };
 		F6162BC12785099F00C31C46 /* AuthentificationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6162BB62785099F00C31C46 /* AuthentificationAssembly.swift */; };
 		F6162BC22785099F00C31C46 /* AuthentificationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6162BB82785099F00C31C46 /* AuthentificationPresenter.swift */; };
@@ -60,6 +61,7 @@
 		96ED95A82786F0E400AC4DDC /* Molecule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Molecule.swift; sourceTree = "<group>"; };
 		96ED95AB2786F20D00AC4DDC /* Atom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Atom.swift; sourceTree = "<group>"; };
 		96ED95AE2786F2DA00AC4DDC /* ParserPDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParserPDB.swift; sourceTree = "<group>"; };
+		96ED9F9427878B0600AC4DDC /* CPKColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPKColor.swift; sourceTree = "<group>"; };
 		F6162BB42785099F00C31C46 /* AuthentificationContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthentificationContract.swift; sourceTree = "<group>"; };
 		F6162BB62785099F00C31C46 /* AuthentificationAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthentificationAssembly.swift; sourceTree = "<group>"; };
 		F6162BB82785099F00C31C46 /* AuthentificationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthentificationPresenter.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				96ED95AE2786F2DA00AC4DDC /* ParserPDB.swift */,
+				96ED9F9427878B0600AC4DDC /* CPKColor.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -534,6 +537,7 @@
 				96ED95AF2786F2DA00AC4DDC /* ParserPDB.swift in Sources */,
 				F61F3C312788966B009FA510 /* ProteinListHeader.swift in Sources */,
 				F6BCD917278527A20045AE29 /* ProteinListInteractor.swift in Sources */,
+				96ED9F9527878B0600AC4DDC /* CPKColor.swift in Sources */,
 				F6BCD92A278532AE0045AE29 /* UITableView+Ext.swift in Sources */,
 				F6BCD91C278527F90045AE29 /* SectionProtocol.swift in Sources */,
 				F6162BC02785099F00C31C46 /* AuthentificationContract.swift in Sources */,

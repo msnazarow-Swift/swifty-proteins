@@ -15,6 +15,7 @@ class ProteinView: UIViewController {
 		return true
 	}
 
+    private let colorPallete = CPKColor.shared
 	private let cameraZPosition = 21
 	private let sphereRadius: CGFloat = 0.2
 	private let cylinderRadius: CGFloat = 0.1
@@ -24,23 +25,20 @@ class ProteinView: UIViewController {
     private lazy var scnView: SCNView = {
         let scnView = SCNView()
         scnView.translatesAutoresizingMaskIntoConstraints = false
-        // allows the user to manipulate the camera
         scnView.allowsCameraControl = true
-        // show statistics such as fps and timing information
-        scnView.showsStatistics = true
-        // configure the view
         scnView.autoenablesDefaultLighting = true
-		scnView.backgroundColor = .clear
+        scnView.backgroundColor = .clear
+        scnView.scene = SCNScene()
+        scnView.scene?.background.contents = UIColor.sceneBackground
         return scnView
     }()
 
-	private lazy var spinner: UIActivityIndicatorView = {
-		let view = UIActivityIndicatorView(style: .large)
-		view.startAnimating()
-		view.translatesAutoresizingMaskIntoConstraints = false
-		return view
-	}()
-
+    private lazy var spinner: UIActivityIndicatorView = {
+        let view = UIActivityIndicatorView(style: .large)
+        view.startAnimating()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
 
     // MARK: - Init
     convenience init(presenter: ProteinViewOutput) {
@@ -85,7 +83,6 @@ class ProteinView: UIViewController {
 			spinner.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
-    
 
 	@objc func shareButtonTapped() {
 		let image = scnView.snapshot()
@@ -96,10 +93,6 @@ class ProteinView: UIViewController {
 // MARK: - View Input (Presenter -> View)
 extension ProteinView: ProteinViewInput {
     func showMolecule(_ molecule: Molecule) {
-        let scene = SCNScene()
-        scnView.scene = scene
-		scene.background.contents = UIColor.sceneBackground
-        // add molecule on the screen
         fillScene(molecule)
 		spinner.stopAnimating()
     }
@@ -130,6 +123,8 @@ extension ProteinView: ProteinViewInput {
     
     private func createAtomNode(atom: Atom) -> SCNNode {
         let atomSphere = SCNSphere(radius: sphereRadius)
+        atomSphere.firstMaterial?.diffuse.contents = colorPallete.getColorFor(atom.type)
+        atomSphere.firstMaterial?.lightingModel = .physicallyBased
         let atomNode = SCNNode(geometry: atomSphere)
         atomNode.position = atom.vector
         return atomNode
@@ -144,6 +139,7 @@ extension ProteinView: ProteinViewInput {
                                    height: CGFloat(height)
         )
         cylindre.firstMaterial?.diffuse.contents = cylinderColor
+        cylindre.firstMaterial?.lightingModel = .physicallyBased
 
         let cylinderNode = SCNNode(geometry: cylindre)
         cylinderNode.position = SCNVector3(
@@ -169,10 +165,4 @@ extension ProteinView: ProteinViewInput {
 		present(alert, animated: true)
 		spinner.stopAnimating()
 	}
-}
-
-
-
-final class CPKColor {
-    
 }

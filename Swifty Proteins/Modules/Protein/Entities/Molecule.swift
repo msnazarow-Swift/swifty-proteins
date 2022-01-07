@@ -7,7 +7,7 @@
 
 final class Molecule: Equatable {
     /// Molecule name
-    let name: String
+    var name: String
     /// Atoms
     var atoms: [Atom]
     

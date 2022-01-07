@@ -23,6 +23,9 @@ final class ParserPDB: ParserInput {
     func parsePDB(_ text: String) -> Molecule {
         let molecule = Molecule()
         let separatedText = text.components(separatedBy: .newlines)
+        molecule.name = separatedText.first?
+            .components(separatedBy: .whitespacesAndNewlines)
+            .filter { !$0.isEmpty }[3] ?? ""
         for line in separatedText {
             if line.contains("ATOM") {
                 let atom = getAtom(text: line)
