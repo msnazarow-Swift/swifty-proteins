@@ -11,6 +11,7 @@ import UIKit
 protocol ProteinListViewInput: AnyObject {
 	func tableViewReload()
 	func showError(_ error: String)
+	func showCustomLigandTextField()
 }
 
 // MARK: - View Output (View -> Presenter)
@@ -20,6 +21,8 @@ protocol ProteinListViewOutput: AnyObject {
 	func updateSearchResults(_ view: ProteinListViewInput, text: String?)
     func viewDidLoad(_ view: ProteinListViewInput)
 	func randomButtonTapped(_ view: ProteinListViewInput)
+	func customButtonTapped(_ view: ProteinListViewInput)
+	func okButtonTapped(_ view: ProteinListViewInput, text: String?)
 }
 
 // MARK: - Interactor Input (Presenter -> Interactor)
