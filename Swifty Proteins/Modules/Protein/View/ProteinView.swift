@@ -104,7 +104,6 @@ extension ProteinView: ProteinViewInput {
         scnView.scene = scene
 		scene.background.contents = UIColor.sceneBackground
         // add molecule on the screen
-		sleep(1)
         fillScene(molecule)
 		spinner.stopAnimating()
     }
