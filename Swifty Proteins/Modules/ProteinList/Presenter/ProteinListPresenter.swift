@@ -35,7 +35,7 @@ extension ProteinListPresenter: ProteinListViewOutput {
 			let filepath = Bundle.main.path(forResource: "ligands", ofType: "txt"),
 			let proteins = try? String(contentsOfFile: filepath).components(separatedBy: .newlines)
 		else { return }
-		self.proteins = proteins
+		self.proteins = proteins.compactMap{ $0.isEmpty ? nil : $0 }
 
 		dataSource.updateForSections(generateAlphaSorted(proteins: proteins).map { ProteinListSection($1) })
 		dataSource.updateForHeaders(generateAlphaSorted(proteins: proteins).map { ProteinListHeaderModel(title: String($0.key)) })
