@@ -16,7 +16,8 @@ protocol ProteinViewInput: AnyObject {
 // MARK: - View Output (View -> Presenter)
 protocol ProteinViewOutput: AnyObject {
     var dataSource: ProteinDataSourceInput { get }
-    func viewDidLoad()
+    func viewDidLoad(_ view: ProteinViewInput)
+	func shareButtonTapped(_ view: ProteinViewInput, image: UIImage)
 }
 
 // MARK: - Interactor Input (Presenter -> Interactor)
@@ -31,7 +32,9 @@ protocol ProteinInteractorOutput: AnyObject {
 }
 
 // MARK: - Router Input (Presenter -> Router)
-protocol ProteinRouterInput: AnyObject {}
+protocol ProteinRouterInput: AnyObject {
+	func routeToActivity(image: UIImage)
+}
 
 // MARK: - DataSource Input (Presenter -> DataSource)
 protocol ProteinDataSourceInput: UITableViewDataSource {

@@ -5,7 +5,7 @@
 //  Created by 19733654 on 05.01.2022.
 //
 
-import Foundation
+import UIKit
 
 class ProteinPresenter {
 
@@ -32,9 +32,17 @@ class ProteinPresenter {
 
 // MARK: - View Output (View -> Presenter)
 extension ProteinPresenter: ProteinViewOutput {
-	func viewDidLoad() {
+	func viewDidLoad(_ view: ProteinViewInput) {
         interactor.getMolecule(name: protein)
     }
+
+	func shareButtonTapped(_ view: ProteinViewInput, image: UIImage) {
+//		guard let image = image else {
+//			view.reciveError("No data to share")
+//			return
+//		}
+		router.routeToActivity(image: image)
+	}
 }
 
 // MARK: - Cell Output (Cell -> Presenter)

@@ -13,4 +13,11 @@ class ProteinRouter {
 }
 
 // MARK: - Router Input (Presenter -> Router)
-extension ProteinRouter: ProteinRouterInput {}
+extension ProteinRouter: ProteinRouterInput {
+	func routeToActivity(image: UIImage) {
+		let activityVC = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+		guard let view = view else { return }
+		activityVC.popoverPresentationController?.sourceView = view.view
+		view.present(activityVC, animated: true)
+	}
+}

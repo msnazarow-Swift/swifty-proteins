@@ -11,7 +11,11 @@ import SceneKit
 class ProteinView: UIViewController {
     // MARK: - Properties
     var presenter: ProteinViewOutput!
-    
+	override var shouldAutorotate: Bool {
+		return true
+	}
+
+	// MARK: - Views
     private lazy var scnView: SCNView = {
         let scnView = SCNView()
         scnView.translatesAutoresizingMaskIntoConstraints = false
@@ -39,13 +43,19 @@ class ProteinView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        presenter.viewDidLoad()
+        presenter.viewDidLoad(self)
     }
 
     private func setupUI() {
+		setupNavigationItem()
         addSubviews()
         setupConstraints()
     }
+
+	private func setupNavigationItem() {
+		let shareButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareButtonTapped))
+		navigationItem.setRightBarButton(shareButton, animated: true)
+	}
 
     private func addSubviews() {
         view.addSubview(scnView)
@@ -60,9 +70,11 @@ class ProteinView: UIViewController {
         ])
     }
     
-    override var shouldAutorotate: Bool {
-        return true
-    }
+
+	@objc func shareButtonTapped() {
+		let image = scnView.snapshot()
+		presenter.shareButtonTapped(self, image: image)
+	}
 }
 
 // MARK: - View Input (Presenter -> View)
