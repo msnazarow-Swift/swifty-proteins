@@ -6,7 +6,7 @@
 //
 
 import UIKit
-//import UITextView_Placeholder
+import UITextView_Placeholder
 import LinkPresentation
 
 class ScreenShotView: UIViewController {
@@ -24,7 +24,7 @@ class ScreenShotView: UIViewController {
 		let textView = UITextView()
 		textView.font = .systemFont(ofSize: 17 )
 		textView.layer.borderWidth = 1
-//		textView.placeholder = "Input your content here ... "
+		textView.placeholder = "Input your content here ... "
 		textView.layer.cornerRadius = 10
 		textView.layer.borderColor = UIColor.lightGray.cgColor
 		textView.isScrollEnabled = false

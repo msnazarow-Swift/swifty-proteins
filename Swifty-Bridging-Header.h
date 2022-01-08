@@ -7,5 +7,5 @@
 
 #ifndef Swifty_Bridging_Header_h
 #define Swifty_Bridging_Header_h
-//#import </Users/a19733654/Library/Developer/Xcode/DerivedData/Swifty_Proteins-elnunzbcbufcsjhjxliupxcwvxes/SourcePackages/checkouts/UITextView-Placeholder/Sources/UITextView+Placeholder.h>
+#import </Users/a19733654/Library/Developer/Xcode/DerivedData/Swifty_Proteins-elnunzbcbufcsjhjxliupxcwvxes/SourcePackages/checkouts/UITextView-Placeholder/Sources/UITextView+Placeholder.h>
 #endif /* Swifty_Bridging_Header_h */
