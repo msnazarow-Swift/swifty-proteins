@@ -35,10 +35,8 @@ struct Elements: Equatable, Decodable {
             case energyLevels = "shells"
             case meltingPoint = "melt"
             case boilingPoint = "boil"
-            case density
-            
-            
             case phase
+            case density
         }
     }
 }
