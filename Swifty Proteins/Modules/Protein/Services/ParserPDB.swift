@@ -79,7 +79,11 @@ final class ParserPDB: ParserInput {
               let atom = molecule.atoms.first(where: { $0.id == firstAtomID })
         else { return }
         for connect in connectComponents {
-            if connect > atom.id {
+            if connect > atom.id ||
+                molecule.atoms.contains(
+                    where: { $0.connects.contains(
+                        where: { $0 != connect && connect != atom.id }) })
+            {
                 atom.connects.append(connect)
             }
         }
