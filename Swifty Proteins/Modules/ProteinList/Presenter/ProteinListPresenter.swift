@@ -85,7 +85,7 @@ extension ProteinListPresenter: ProteinListViewOutput {
 	}
 
 	func okButtonTapped(_ view: ProteinListViewInput, text : String?) {
-		guard let text = text, !text.isEmpty else {
+		guard let text = text?.uppercased(), !text.isEmpty else {
 			view.showError("Empty field")
 			return
 		}

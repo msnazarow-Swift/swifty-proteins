@@ -51,9 +51,9 @@ final class ParserPDB: ParserInput {
         let id = Int(atomComponents[1]) ?? 0
         let atomID = atomComponents[2]
         let vector = SCNVector3(
-            Double(atomComponents[6]) ?? 0,
-            Double(atomComponents[7]) ?? 0,
-            Double(atomComponents[8]) ?? 0
+            (Double(atomComponents[6]) ?? 0) / 100,
+            (Double(atomComponents[7]) ?? 0) / 100,
+            (Double(atomComponents[8]) ?? 0) / 100
         )
         let type = atomComponents[11]
         
