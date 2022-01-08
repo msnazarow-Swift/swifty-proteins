@@ -59,4 +59,16 @@ extension ProteinInteractor: ProteinInteractorInput {
             }
         }.resume()
     }
+    
+    func getElementsInfo() {
+        if let path = Bundle.main.path(forResource: "PeriodicTableJSON", ofType: "json"),
+           let data = try? Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe){
+            do {
+                let elements = try JSONDecoder().decode(Elements.self, from: data)
+                self.presenter?.reciveElementsInfo(elements)
+            } catch {
+                self.presenter?.reciveError(ProteinInteractorError.dataNotValid)
+            }
+        }
+    }
 }

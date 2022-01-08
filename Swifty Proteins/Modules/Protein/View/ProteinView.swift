@@ -8,15 +8,14 @@
 import UIKit
 import SceneKit
 
-class ProteinView: UIViewController {
+class ProteinView: UIViewController, UIPopoverPresentationControllerDelegate {
     // MARK: - Properties
     var presenter: ProteinViewOutput!
-	override var shouldAutorotate: Bool {
-		return true
-	}
+    
+    private var elements: Elements = .init()
+    private var molecule: Molecule = .init()
 
     private let colorPallete = CPKColor.shared
-	private let cameraZPosition = 21
 	private let sphereRadius: CGFloat = 0.2
 	private let cylinderRadius: CGFloat = 0.1
 	private let cylinderColor: UIColor = UIColor(red: 0.53, green: 0.56, blue: 0.56, alpha: 1.00)
@@ -89,19 +88,40 @@ class ProteinView: UIViewController {
 			presenter.shareButtonTapped(self, image: image)
 		}
 	}
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let touch = touches.first!
+        let location = touch.location(in: scnView)
+        let hitList = scnView.hitTest(location, options: nil)
+        if let hitObject = hitList.first {
+            showAtomInfo(hitObject: hitObject, location: location)
+        }
+    }
+    
+    override var shouldAutorotate: Bool {
+        return true
+    }
+    
+    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+        return .none
+    }
 }
 
 // MARK: - View Input (Presenter -> View)
 extension ProteinView: ProteinViewInput {
+    func setElementsInfo(_ elements: Elements) {
+        self.elements = elements
+    }
+    
     func showMolecule(_ molecule: Molecule) {
+        self.molecule = molecule
         fillScene(molecule)
 		spinner.stopAnimating()
     }
     
-    
     private func fillScene(_ molecule: Molecule) {
         guard let scene = scnView.scene else { return }
-        let camera = createCameraNode()
+        let camera = createCameraNode(atoms: molecule.atoms)
         scene.rootNode.addChildNode(camera)
         for atom in molecule.atoms {
             let newAtom = createAtomNode(atom: atom)
@@ -114,11 +134,12 @@ extension ProteinView: ProteinViewInput {
         }
     }
     
-    private func createCameraNode() -> SCNNode {
+    private func createCameraNode(atoms: [Atom]) -> SCNNode {
+        let position: Double = atoms.count < 150 ? 35 : 70
         let camera = SCNCamera()
         let cameraNode = SCNNode()
         cameraNode.camera = camera
-        cameraNode.position = SCNVector3(0, 0, cameraZPosition)
+        cameraNode.position = SCNVector3(0, 0, position)
         return cameraNode
     }
     
@@ -173,4 +194,19 @@ extension ProteinView: ProteinViewInput {
 		present(alert, animated: true)
 		spinner.stopAnimating()
 	}
+    
+    private func showAtomInfo(hitObject: SCNHitTestResult, location: CGPoint) {
+        guard let atom = molecule.atoms.first(where: { $0.vector == hitObject.node.position }),
+              let atomInfo = elements.elements.first(where: { $0.symbol == atom.type })
+        else { return }
+        let popoverView = ProteinPopoverView()
+        popoverView.modalPresentationStyle = .popover
+        popoverView.popoverPresentationController?.permittedArrowDirections = .any
+        popoverView.preferredContentSize = CGSize(width: 250, height: 250)
+        popoverView.popoverPresentationController?.sourceView = scnView
+        popoverView.popoverPresentationController?.sourceRect = CGRect(x: location.x, y: location.y, width: 0, height: 0)
+        popoverView.popoverPresentationController?.delegate = self
+        popoverView.configure(element: atomInfo)
+        self.present(popoverView, animated: true, completion: nil)
+    }
 }
