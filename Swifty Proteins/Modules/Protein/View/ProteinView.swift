@@ -90,7 +90,7 @@ class ProteinView: UIViewController, UIPopoverPresentationControllerDelegate {
 	}
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        let touch = touches.first!
+        guard let touch = touches.first else { return }
         let location = touch.location(in: scnView)
         let hitList = scnView.hitTest(location, options: nil)
         if let hitObject = hitList.first {

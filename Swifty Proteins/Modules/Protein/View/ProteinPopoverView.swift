@@ -94,14 +94,15 @@ extension ProteinPopoverView {
         label.font = UIFont(name: regularFontName, size: 13.0)
         label.numberOfLines = 2
         let myString = info.appending(text).appending(" \(unit)")
-        let myAttribute = [ NSAttributedString.Key.font: UIFont(name: boldFontName, size: 13.0)! ]
+        let myAttribute = [ NSAttributedString.Key.font: UIFont(name: boldFontName, size: 13.0) ?? UIFont() ]
         let attributedString = NSMutableAttributedString(string: myString)
         attributedString.addAttributes(myAttribute, range: NSRange(location: 0, length: info.count))
         if let lastCharacter = myString.last,
-           lastCharacter.isNumber {
+           lastCharacter.isNumber,
+           let font = UIFont(name: regularFontName, size: 9.0) {
             attributedString.addAttributes(
                 [
-                    NSAttributedString.Key.font: UIFont(name: regularFontName, size: 9.0)!,
+                    NSAttributedString.Key.font: font,
                     NSAttributedString.Key.baselineOffset: 4
                 ],
                 range: NSRange.init(location: myString.count - 1, length: 1)
