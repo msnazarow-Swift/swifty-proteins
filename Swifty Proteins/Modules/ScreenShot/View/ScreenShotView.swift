@@ -9,8 +9,13 @@ import UIKit
 import LinkPresentation
 
 class ScreenShotView: UIViewController {
+	// MARK: - Properties
 	let gap: CGFloat = 10
+	let placeholder = "Input your content here ... "
+	var placeholderActive = true
+	var presenter: ScreenShotViewOutput!
 
+	// MARK: - Views
 	let titleTextField: UITextField = {
 		let textField = UITextField()
 		textField.font = .systemFont(ofSize: 20)
@@ -19,11 +24,13 @@ class ScreenShotView: UIViewController {
 		return textField
 	}()
 
-	let contentTextView: UITextView = {
+	lazy var contentTextView: UITextView = {
 		let textView = UITextView()
 		textView.font = .systemFont(ofSize: 17 )
 		textView.layer.borderWidth = 1
-		textView.placeholder = "Input your content here ... "
+		textView.delegate = self
+		textView.text = placeholder
+		textView.textColor = .placeholderText
 		textView.layer.cornerRadius = 10
 		textView.layer.borderColor = UIColor.lightGray.cgColor
 		textView.isScrollEnabled = false
@@ -52,8 +59,7 @@ class ScreenShotView: UIViewController {
 		return view
 	}()
 
-	// MARK: - Properties
-	var presenter: ScreenShotViewOutput!
+	var footerConstraint: NSLayoutConstraint?
 
 	// MARK: - Init
 	convenience init(presenter: ScreenShotViewOutput) {
@@ -65,6 +71,7 @@ class ScreenShotView: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		setupUI()
+		subscribeKeyboardNotifications()
 		presenter.viewDidLoad()
 	}
 
@@ -100,10 +107,11 @@ class ScreenShotView: UIViewController {
 			vstack.trailingAnchor.constraint(equalTo: scrollView.safeAreaLayoutGuide.trailingAnchor, constant: -gap),
 
 			scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: gap),
-			scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -gap),
 			scrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: gap),
 			scrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -gap)
 		])
+		footerConstraint = scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -gap)
+		footerConstraint?.isActive = true
 	}
 
 }
@@ -133,6 +141,7 @@ extension ScreenShotView: ScreenShotViewInput {
 	}
 }
 
+// MARK: - UIActivityItemSource
 extension ScreenShotView: UIActivityItemSource {
 	func activityViewControllerPlaceholderItem(_ activityViewController: UIActivityViewController) -> Any {
 		titleTextField.text ?? ""
@@ -152,5 +161,53 @@ extension ScreenShotView: UIActivityItemSource {
 		metadata.iconProvider = NSItemProvider(object: imageView.image ?? UIImage())
 		metadata.originalURL = URL(fileURLWithPath: contentTextView.text)
 		return metadata
+	}
+}
+
+// MARK: - UITextViewDelegate
+extension ScreenShotView: UITextViewDelegate {
+	func textViewDidBeginEditing(_ textView: UITextView) {
+		if placeholderActive {
+			contentTextView.text = ""
+			placeholderActive = false
+			contentTextView.textColor = .label
+		}
+	}
+
+	func textViewDidEndEditing(_ textView: UITextView) {
+		if contentTextView.text.isEmpty {
+			placeholderActive = true
+			contentTextView.text = placeholder
+			contentTextView.textColor = .placeholderText
+		}
+	}
+}
+
+// MARK: - KeyboardNotifications
+private extension ScreenShotView {
+	private func subscribeKeyboardNotifications() {
+		let notificationCenter = NotificationCenter.default
+		notificationCenter.addObserver(
+			self,
+			selector: #selector(keyboardWillHide),
+			name: UIResponder.keyboardWillHideNotification,
+			object: nil
+		)
+		notificationCenter.addObserver(
+			self,
+			selector: #selector(keyboardWillShow),
+			name: UIResponder.keyboardWillShowNotification,
+			object: nil
+		)
+	}
+
+	@objc private func keyboardWillShow(_ notification: Notification) {
+		if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+			footerConstraint?.constant = -keyboardSize.height + view.safeAreaInsets.bottom
+		}
+	}
+
+	@objc private func keyboardWillHide(_ notification: Notification) {
+		footerConstraint?.constant = 0
 	}
 }

@@ -11,6 +11,7 @@ class ProteinListView: UIViewController {
 
     // MARK: - Properties
     var presenter: ProteinListViewOutput!
+	var footerConstraint: NSLayoutConstraint?
 
 	// MARK: - Views
 	lazy var collectionView: UICollectionView = {
@@ -22,6 +23,7 @@ class ProteinListView: UIViewController {
 		collectionView.delegate = presenter.dataSource
 		collectionView.backgroundColor = .clear
 		collectionView.translatesAutoresizingMaskIntoConstraints = false
+		collectionView.showsVerticalScrollIndicator = false
 		return collectionView
 	}()
 
@@ -43,6 +45,7 @@ class ProteinListView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+		subscribeKeyboardNotifications()
         presenter.viewDidLoad(self)
     }
 
@@ -74,9 +77,10 @@ class ProteinListView: UIViewController {
 		NSLayoutConstraint.activate([
 			collectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
 			collectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-			collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-			collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+			collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor)
 		])
+		footerConstraint = collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+		footerConstraint?.isActive = true
 	}
 
 	@objc func randomButtonTapped() {
@@ -118,5 +122,34 @@ extension ProteinListView: ProteinListViewInput {
 extension ProteinListView: UISearchResultsUpdating {
 	func updateSearchResults(for searchController: UISearchController) {
 		presenter.updateSearchResults(self, text: searchController.searchBar.text)
+	}
+}
+
+// MARK: - KeyboardNotifications
+private extension ProteinListView {
+	private func subscribeKeyboardNotifications() {
+		let notificationCenter = NotificationCenter.default
+		notificationCenter.addObserver(
+			self,
+			selector: #selector(keyboardWillHide),
+			name: UIResponder.keyboardWillHideNotification,
+			object: nil
+		)
+		notificationCenter.addObserver(
+			self,
+			selector: #selector(keyboardWillShow),
+			name: UIResponder.keyboardWillShowNotification,
+			object: nil
+		)
+	}
+
+	@objc private func keyboardWillShow(_ notification: Notification) {
+		if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+			footerConstraint?.constant = -keyboardSize.height + view.safeAreaInsets.bottom
+		}
+	}
+
+	@objc private func keyboardWillHide(_ notification: Notification) {
+		footerConstraint?.constant = 0
 	}
 }

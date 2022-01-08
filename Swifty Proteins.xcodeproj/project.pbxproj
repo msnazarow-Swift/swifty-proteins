@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -34,7 +34,6 @@
 		F61F3C622788C8A8009FA510 /* ScreenShotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61F3C552788C8A8009FA510 /* ScreenShotView.swift */; };
 		F61F3C632788C8A8009FA510 /* ScreenShotInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61F3C572788C8A8009FA510 /* ScreenShotInteractor.swift */; };
 		F61F3C642788C8A8009FA510 /* ScreenShotRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61F3C5A2788C8A8009FA510 /* ScreenShotRouter.swift */; };
-		F61F3C6F2788C9F1009FA510 /* UITextView+Placeholder in Frameworks */ = {isa = PBXBuildFile; productRef = F61F3C6E2788C9F1009FA510 /* UITextView+Placeholder */; settings = {ATTRIBUTES = (Required, ); }; };
 		F61F3C7C2788DA71009FA510 /* UIImage+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61F3C7B2788DA71009FA510 /* UIImage+Ext.swift */; };
 		F6BCD905278527A20045AE29 /* ProteinContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BCD8DF278527A20045AE29 /* ProteinContract.swift */; };
 		F6BCD906278527A20045AE29 /* ProteinAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BCD8E1278527A20045AE29 /* ProteinAssembly.swift */; };
@@ -89,7 +88,6 @@
 		F61F3C552788C8A8009FA510 /* ScreenShotView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenShotView.swift; sourceTree = "<group>"; };
 		F61F3C572788C8A8009FA510 /* ScreenShotInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenShotInteractor.swift; sourceTree = "<group>"; };
 		F61F3C5A2788C8A8009FA510 /* ScreenShotRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenShotRouter.swift; sourceTree = "<group>"; };
-		F61F3C772788D111009FA510 /* Swifty-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Swifty-Bridging-Header.h"; sourceTree = "<group>"; };
 		F61F3C7B2788DA71009FA510 /* UIImage+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ext.swift"; sourceTree = "<group>"; };
 		F6BCD8DF278527A20045AE29 /* ProteinContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProteinContract.swift; sourceTree = "<group>"; };
 		F6BCD8E1278527A20045AE29 /* ProteinAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProteinAssembly.swift; sourceTree = "<group>"; };
@@ -119,7 +117,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F61F3C6F2788C9F1009FA510 /* UITextView+Placeholder in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,7 +126,6 @@
 		9635E5252778A202009E82D4 = {
 			isa = PBXGroup;
 			children = (
-				F61F3C772788D111009FA510 /* Swifty-Bridging-Header.h */,
 				9635E5302778A202009E82D4 /* Swifty Proteins */,
 				96E59FB127791D1D0094AD4C /* Supporting Files */,
 				9635E52F2778A202009E82D4 /* Products */,
@@ -537,7 +533,6 @@
 			);
 			name = "Swifty Proteins";
 			packageProductDependencies = (
-				F61F3C6E2788C9F1009FA510 /* UITextView+Placeholder */,
 			);
 			productName = "Swifty Proteins";
 			productReference = 9635E52E2778A202009E82D4 /* Swifty Proteins.app */;
@@ -567,7 +562,6 @@
 			);
 			mainGroup = 9635E5252778A202009E82D4;
 			packageReferences = (
-				F61F3C6D2788C9F1009FA510 /* XCRemoteSwiftPackageReference "UITextView-Placeholder" */,
 			);
 			productRefGroup = 9635E52F2778A202009E82D4 /* Products */;
 			projectDirPath = "";
@@ -716,7 +710,9 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_PRECOMPILE_BRIDGING_HEADER = NO;
 			};
 			name = Debug;
 		};
@@ -770,7 +766,9 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_PRECOMPILE_BRIDGING_HEADER = NO;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -790,7 +788,6 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "s21.Swifty-Proteins";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Swifty-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -811,7 +808,6 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "s21.Swifty-Proteins";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Swifty-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -839,25 +835,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		F61F3C6D2788C9F1009FA510 /* XCRemoteSwiftPackageReference "UITextView-Placeholder" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/devxoul/UITextView-Placeholder";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.4.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		F61F3C6E2788C9F1009FA510 /* UITextView+Placeholder */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F61F3C6D2788C9F1009FA510 /* XCRemoteSwiftPackageReference "UITextView-Placeholder" */;
-			productName = "UITextView+Placeholder";
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9635E5262778A202009E82D4 /* Project object */;
 }
