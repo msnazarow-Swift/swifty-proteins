@@ -38,21 +38,27 @@ extension ProteinListDataSource {
 
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		let model = sections[indexPath.section].rows[indexPath.row]
-		guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: model.identifier, for: indexPath) as? (UICollectionViewCell & CellIdentifiable) else {
+		guard let cell = collectionView.dequeueReusableCell(
+			withReuseIdentifier: model.identifier,
+			for: indexPath
+		) as? (UICollectionViewCell & CellIdentifiable) else {
 			return UICollectionViewCell()
 		}
 		cell.presenter = presenter
 		cell.configure(with: model)
 		return cell
 	}
-
 }
 
 // MARK: - UITableViewDelegate
 extension ProteinListDataSource {
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
 		let indexPath = IndexPath(row: 0, section: section)
-		let headerView = self.collectionView(collectionView, viewForSupplementaryElementOfKind: UICollectionView.elementKindSectionHeader, at: indexPath)
+		let headerView = self.collectionView(
+			collectionView,
+			viewForSupplementaryElementOfKind: UICollectionView.elementKindSectionHeader,
+			at: indexPath
+		)
 		return headerView.systemLayoutSizeFitting(
 			CGSize(width: collectionView.frame.width, height: UIView.layoutFittingExpandedSize.height),
 			withHorizontalFittingPriority: .required,
@@ -66,7 +72,11 @@ extension ProteinListDataSource {
 
 	func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
 		let model = headers[indexPath.section]
-		guard let cell = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: model.identifier, for: indexPath) as? (UICollectionReusableView & CellIdentifiable) else {
+		guard let cell = collectionView.dequeueReusableSupplementaryView(
+			ofKind: kind,
+			withReuseIdentifier: model.identifier,
+			for: indexPath
+		) as? (UICollectionReusableView & CellIdentifiable) else {
 			return UICollectionReusableView()
 		}
 		cell.presenter = presenter

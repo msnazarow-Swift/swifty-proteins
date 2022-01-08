@@ -113,7 +113,6 @@ class ScreenShotView: UIViewController {
 		footerConstraint = scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -gap)
 		footerConstraint?.isActive = true
 	}
-
 }
 
 // MARK: - View Input (Presenter -> View)

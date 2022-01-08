@@ -10,7 +10,7 @@ import Foundation
 class ProteinInteractor {
 	weak var presenter: ProteinInteractorOutput?
     private let parser: ParserInput
-    
+
     init(parser: ParserInput = ParserPDB.shared) {
         self.parser = parser
     }
@@ -61,12 +61,14 @@ extension ProteinInteractor: ProteinInteractorInput {
             } else {
 				self.presenter?.reciveError(ProteinInteractorError.dataNotValid)
             }
-        }.resume()
+        }
+		.resume()
     }
-    
+
     func getElementsInfo() {
-        if let path = Bundle.main.path(forResource: "PeriodicTableJSON", ofType: "json"),
-           let data = try? Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe){
+        if
+			let path = Bundle.main.path(forResource: "PeriodicTableJSON", ofType: "json"),
+			let data = try? Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe) {
             do {
                 let elements = try JSONDecoder().decode(Elements.self, from: data)
                 self.presenter?.reciveElementsInfo(elements)

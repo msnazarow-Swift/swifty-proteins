@@ -9,14 +9,13 @@
 import LocalAuthentication
 
 class AuthentificationPresenter: ViewToPresenterAuthentificationProtocol {
-
     // MARK: Properties
     weak var view: PresenterToViewAuthentificationProtocol!
     let router: PresenterToRouterAuthentificationProtocol
 
     let context = LAContext()
     var compliton: (() -> Void)! {
-        didSet{
+        didSet {
             compliton()
         }
     }
@@ -29,8 +28,7 @@ class AuthentificationPresenter: ViewToPresenterAuthentificationProtocol {
         self.router = router
     }
 
-    func viewDidLoad(){
-
+    func viewDidLoad() {
     }
 
     func didButtonTapped() {

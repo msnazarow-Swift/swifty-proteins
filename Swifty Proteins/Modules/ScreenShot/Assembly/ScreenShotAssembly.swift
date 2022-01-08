@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum ScreenShotAssembly{
+enum ScreenShotAssembly {
     // MARK: Static methods
 	static func createModule(image: UIImage) -> UIViewController {
         let router = ScreenShotRouter()

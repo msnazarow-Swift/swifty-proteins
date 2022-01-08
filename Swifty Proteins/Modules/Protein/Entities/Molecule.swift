@@ -10,7 +10,7 @@ final class Molecule: Equatable {
     var name: String
     /// Atoms
     var atoms: [Atom]
-    
+
     init(
         name: String = "",
         atoms: [Atom] = []

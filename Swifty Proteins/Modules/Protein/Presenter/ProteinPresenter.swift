@@ -8,7 +8,6 @@
 import UIKit
 
 class ProteinPresenter {
-
     // MARK: Properties
     weak var view: ProteinViewInput?
     let interactor: ProteinInteractorInput
@@ -17,8 +16,8 @@ class ProteinPresenter {
 
     // MARK: Init
     init(
-        interactor: ProteinInteractorInput,
-        router: ProteinRouterInput,
+		interactor: ProteinInteractorInput,
+		router: ProteinRouterInput,
 		protein: String
     ) {
         self.interactor = interactor
@@ -51,14 +50,14 @@ extension ProteinPresenter: ProteinInteractorOutput {
             self.view?.showError(error.localizedDescription)
         }
     }
-    
+
     func presentMolecule(_ molecule: Molecule) {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
             self.view?.showMolecule(molecule)
         }
     }
-    
+
     func reciveElementsInfo(_ elements: Elements) {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }

@@ -9,7 +9,6 @@
 import UIKit
 
 class AuthentificationRouter: PresenterToRouterAuthentificationProtocol {
-
     // MARK: - Properties
     weak var view: UIViewController!
 

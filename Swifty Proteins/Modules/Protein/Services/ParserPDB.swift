@@ -14,9 +14,9 @@ protocol ParserInput {
 final class ParserPDB: ParserInput {
     /// Shared Parser
     static let shared: ParserInput = ParserPDB()
-    
+
     private init() {}
-    
+
     /// Returns filled molecule
     /// - Parameter text: Protein name
     /// - Returns: Molecule
@@ -40,9 +40,9 @@ final class ParserPDB: ParserInput {
         }
         return molecule
     }
-    
+
     // MARK: - Private
-    
+
     private func getAtom(text: String) -> Atom {
         let atomComponents = text
             .components(separatedBy: .whitespacesAndNewlines)
@@ -56,7 +56,7 @@ final class ParserPDB: ParserInput {
             (Double(atomComponents[8]) ?? 0) / 100
         )
         let type = atomComponents[11]
-        
+
         let atomModel = Atom(
             id: id,
             atomID: atomID,
@@ -64,7 +64,7 @@ final class ParserPDB: ParserInput {
             vector: vector,
             connects: []
         )
-        
+
         return atomModel
     }
 
@@ -74,18 +74,16 @@ final class ParserPDB: ParserInput {
             .filter { !$0.isEmpty }
             .dropFirst()
             .compactMap { Int($0) }
-        guard connectComponents.count >= 2,
-              let firstAtomID = connectComponents.first,
-              let atom = molecule.atoms.first(where: { $0.id == firstAtomID })
+        guard
+			connectComponents.count >= 2,
+			let firstAtomID = connectComponents.first,
+			let atom = molecule.atoms.first(where: { $0.id == firstAtomID })
         else { return }
-        for connect in connectComponents {
-            if connect > atom.id ||
-                molecule.atoms.contains(
-                    where: { $0.connects.contains(
-                        where: { $0 != connect && connect != atom.id }) })
-            {
-                atom.connects.append(connect)
-            }
+        for connect in connectComponents
+		where (
+			connect > atom.id || molecule.atoms.contains { $0.connects.contains { $0 != connect && connect != atom.id } }
+		) {
+            atom.connects.append(connect)
         }
     }
 }

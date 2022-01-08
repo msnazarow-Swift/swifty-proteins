@@ -18,7 +18,7 @@ final class Atom: Equatable {
     let vector: SCNVector3
     /// Connects atom
     var connects: [Int]
-    
+
     init(
         id: Int = 0,
         atomID: String = "",
@@ -32,7 +32,7 @@ final class Atom: Equatable {
         self.vector = vector
         self.connects = connects
     }
-    
+
     static func == (lhs: Atom, rhs: Atom) -> Bool {
         lhs.id == rhs.id
     }

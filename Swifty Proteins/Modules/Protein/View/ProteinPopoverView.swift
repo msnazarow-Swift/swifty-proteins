@@ -8,11 +8,10 @@
 import UIKit
 
 final class ProteinPopoverView: UIViewController {
-    
     private let gap: CGFloat = 10
     private let regularFontName = "Helvetica"
     private let boldFontName = "Helvetica-Bold"
-    
+
     private lazy var symbolLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -20,7 +19,7 @@ final class ProteinPopoverView: UIViewController {
         label.font = UIFont(name: boldFontName, size: 17.0)
         return label
     }()
-    
+
     private lazy var nameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -28,7 +27,7 @@ final class ProteinPopoverView: UIViewController {
         label.font = UIFont(name: boldFontName, size: 17.0)
         return label
     }()
-    
+
     private lazy var stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -37,34 +36,34 @@ final class ProteinPopoverView: UIViewController {
         stackView.spacing = 5
         return stackView
     }()
-    
+
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
     }
-    
+
     private func setupUI() {
         addSubviews()
         setupConstraints()
     }
-    
+
     private func addSubviews() {
         view.addSubview(symbolLabel)
         view.addSubview(nameLabel)
         view.addSubview(stackView)
     }
-    
+
     private func setupConstraints() {
         NSLayoutConstraint.activate([
             symbolLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: gap),
             symbolLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: gap),
             symbolLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -gap),
-            
+
             nameLabel.topAnchor.constraint(equalTo: symbolLabel.bottomAnchor),
             nameLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: gap),
             nameLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -gap),
-            
+
             stackView.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: gap),
             stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: gap),
             stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -gap),
@@ -74,7 +73,7 @@ final class ProteinPopoverView: UIViewController {
 }
 
 extension ProteinPopoverView {
-    func configure(element: Elements.Element) {
+    func configure(element: Element) {
         let energyLevels = element.energyLevels.map { String($0) }.joined(separator: ", ")
         symbolLabel.text = element.symbol
         nameLabel.text = element.name
@@ -87,7 +86,7 @@ extension ProteinPopoverView {
         addInfo(info: "Phase: ", value: element.phase)
         addInfo(info: "Density: ", value: element.density?.description, unit: "g/cm3")
     }
-    
+
     private func addInfo(info: String, value: String?, unit: String = "") {
         guard let text = value else { return }
         let label = UILabel()
@@ -97,17 +96,17 @@ extension ProteinPopoverView {
         let myAttribute = [ NSAttributedString.Key.font: UIFont(name: boldFontName, size: 13.0) ?? UIFont() ]
         let attributedString = NSMutableAttributedString(string: myString)
         attributedString.addAttributes(myAttribute, range: NSRange(location: 0, length: info.count))
-        if let lastCharacter = myString.last,
-           lastCharacter.isNumber,
-           let font = UIFont(name: regularFontName, size: 9.0) {
-            attributedString.addAttributes(
+        if
+			let lastCharacter = myString.last,
+			lastCharacter.isNumber,
+			let font = UIFont(name: regularFontName, size: 9.0) {
+			attributedString.addAttributes(
                 [
                     NSAttributedString.Key.font: font,
                     NSAttributedString.Key.baselineOffset: 4
                 ],
                 range: NSRange.init(location: myString.count - 1, length: 1)
             )
-                
         }
 
         label.attributedText = attributedString

@@ -13,7 +13,10 @@ extension UICollectionView {
 	}
 
 	func register(_ headerClass: UICollectionReusableView.Type) {
-		register(headerClass, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: String(describing: headerClass.self))
+		register(
+			headerClass,
+			forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+			withReuseIdentifier: String(describing: headerClass.self)
+		)
 	}
 }
-

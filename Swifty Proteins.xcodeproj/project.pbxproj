@@ -523,6 +523,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9635E5422778A205009E82D4 /* Build configuration list for PBXNativeTarget "Swifty Proteins" */;
 			buildPhases = (
+				F6679442278A1DE800F8DEA2 /* ShellScript */,
 				9635E52A2778A202009E82D4 /* Sources */,
 				9635E52B2778A202009E82D4 /* Frameworks */,
 				9635E52C2778A202009E82D4 /* Resources */,
@@ -585,6 +586,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		F6679442278A1DE800F8DEA2 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nPATH=/opt/homebrew/bin:$PATH\nif [ -f ~/com.raywenderlich.swiftlint.yml ]; then\n  if which swiftlint >/dev/null; then\n    swiftlint --no-cache --config ~/com.raywenderlich.swiftlint.yml\n  fi\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9635E52A2778A202009E82D4 /* Sources */ = {

@@ -8,11 +8,9 @@
 
 import UIKit
 
-enum AuthentificationAssembly{
-    
+enum AuthentificationAssembly {
     // MARK: Static methods
     static func createModule() -> UIViewController {
-
         let viewController = AuthentificationViewController()
         let router = AuthentificationRouter(view: viewController)
         let presenter = AuthentificationPresenter(

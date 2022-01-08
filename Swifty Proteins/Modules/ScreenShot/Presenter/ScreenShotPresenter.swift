@@ -8,7 +8,6 @@
 import UIKit
 
 class ScreenShotPresenter {
-
     // MARK: Properties
     weak var view: ScreenShotViewInput?
     let interactor: ScreenShotInteractorInput
@@ -16,11 +15,11 @@ class ScreenShotPresenter {
 	let image: UIImage
 
     // MARK: Init
-    init(
-        interactor: ScreenShotInteractorInput,
-        router: ScreenShotRouterInput,
+	init(
+		interactor: ScreenShotInteractorInput,
+		router: ScreenShotRouterInput,
 		image: UIImage
-    ) {
+	) {
         self.interactor = interactor
         self.router = router
 		self.image = image

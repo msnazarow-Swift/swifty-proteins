@@ -17,7 +17,7 @@ extension ScreenShotRouter: ScreenShotRouterInput {
 	func routeToActivity(items: [Any]) {
 		let activityVC = UIActivityViewController(activityItems: items, applicationActivities: nil)
 		guard let view = view else { return }
-		activityVC.completionWithItemsHandler = { (type, success, items, error) in
+		activityVC.completionWithItemsHandler = { _, success, _, error in
 			if let error = error {
 				view.showError(error.localizedDescription)
 			} else if success {

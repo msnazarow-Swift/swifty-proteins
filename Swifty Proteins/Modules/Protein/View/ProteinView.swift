@@ -12,14 +12,14 @@ import ARKit
 class ProteinView: UIViewController, UIPopoverPresentationControllerDelegate {
     // MARK: - Properties
     var presenter: ProteinViewOutput!
-    
+
     private var elements: Elements = .init()
     private var molecule: Molecule = .init()
 
     private let colorPallete = CPKColor.shared
 	private let sphereRadius: CGFloat = 0.002
 	private let cylinderRadius: CGFloat = 0.001
-	private let cylinderColor: UIColor = UIColor(red: 0.53, green: 0.56, blue: 0.56, alpha: 1.00)
+	private let cylinderColor = UIColor(red: 0.53, green: 0.56, blue: 0.56, alpha: 1.00)
 
 	// MARK: - Views
 	let scene = SCNScene()
@@ -93,11 +93,11 @@ class ProteinView: UIViewController, UIPopoverPresentationControllerDelegate {
     }
 
     private func setupConstraints() {
-        NSLayoutConstraint.activate([
-            scnView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            scnView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            scnView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            scnView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+		NSLayoutConstraint.activate([
+			scnView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+			scnView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+			scnView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+			scnView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
 
 			arScnView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
 			arScnView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
@@ -108,15 +108,15 @@ class ProteinView: UIViewController, UIPopoverPresentationControllerDelegate {
 			spinner.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
 			spinner.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
 			spinner.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
-        ])
-    }
+		])
+	}
 
 	@objc func shareButtonTapped() {
 		if let image = scnView.snapshot().trimmingTransparentPixels(maximumAlphaChannel: 150) {
 			presenter.shareButtonTapped(self, image: image)
 		}
 	}
-    
+
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touch = touches.first else { return }
         let location = touch.location(in: scnView)
@@ -125,11 +125,11 @@ class ProteinView: UIViewController, UIPopoverPresentationControllerDelegate {
             showAtomInfo(hitObject: hitObject, location: location)
         }
     }
-    
+
     override var shouldAutorotate: Bool {
         return true
     }
-    
+
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
         return .none
     }
@@ -140,7 +140,7 @@ extension ProteinView: ProteinViewInput {
     func setElementsInfo(_ elements: Elements) {
         self.elements = elements
     }
-    
+
     func showMolecule(_ molecule: Molecule) {
         self.molecule = molecule
         fillScene(molecule)
@@ -148,7 +148,7 @@ extension ProteinView: ProteinViewInput {
 			self?.spinner.stopAnimating()
 		}
     }
-    
+
     private func fillScene(_ molecule: Molecule) {
         for atom in molecule.atoms {
             let newAtom = createAtomNode(atom: atom)
@@ -175,8 +175,9 @@ extension ProteinView: ProteinViewInput {
             SCNVector3ToGLKVector3(firstAtom.vector),
             SCNVector3ToGLKVector3(secondAtom.vector)
         )
-        let cylindre = SCNCylinder(radius: cylinderRadius,
-                                   height: CGFloat(height)
+        let cylindre = SCNCylinder(
+			radius: cylinderRadius,
+			height: CGFloat(height)
         )
         cylindre.firstMaterial?.diffuse.contents = cylinderColor
         cylindre.firstMaterial?.lightingModel = .physicallyBased
@@ -188,7 +189,7 @@ extension ProteinView: ProteinViewInput {
             (firstAtom.vector.z + secondAtom.vector.z) / 2
         )
         cylinderNode.eulerAngles = SCNVector3Make(
-            Float(Double.pi/2),
+            Float(Double.pi / 2),
             acos((secondAtom.vector.z - firstAtom.vector.z) / height),
             atan2((secondAtom.vector.y - firstAtom.vector.y), (secondAtom.vector.x - firstAtom.vector.x))
         )
@@ -212,10 +213,11 @@ extension ProteinView: ProteinViewInput {
 		present(alert, animated: true)
 		spinner.stopAnimating()
 	}
-    
+
     private func showAtomInfo(hitObject: SCNHitTestResult, location: CGPoint) {
-        guard let atom = molecule.atoms.first(where: { $0.vector == hitObject.node.position }),
-              let atomInfo = elements.elements.first(where: { $0.symbol.uppercased() == atom.type })
+        guard
+			let atom = molecule.atoms.first(where: { $0.vector == hitObject.node.position }),
+			let atomInfo = elements.elements.first(where: { $0.symbol.uppercased() == atom.type })
         else { return }
         let popoverView = ProteinPopoverView()
         popoverView.modalPresentationStyle = .popover

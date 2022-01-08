@@ -38,7 +38,6 @@ class ProteinListHeader: UICollectionReusableView, CellIdentifiable {
 		addSubview(label)
 	}
 	func setupConstraints() {
-
 		let constraints = [
 			label.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -gap),
 			label.leadingAnchor.constraint(equalTo: leadingAnchor, constant: gap),
@@ -46,7 +45,7 @@ class ProteinListHeader: UICollectionReusableView, CellIdentifiable {
 			label.topAnchor.constraint(equalTo: topAnchor, constant: gap)
 		]
 
-		constraints.forEach{ $0.priority = UILayoutPriority(rawValue: 999) }
+		constraints.forEach { $0.priority = UILayoutPriority(rawValue: 999) }
 		NSLayoutConstraint.activate(constraints)
 	}
 	func updateViews() {

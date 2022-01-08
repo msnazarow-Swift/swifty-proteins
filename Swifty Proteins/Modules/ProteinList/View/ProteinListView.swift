@@ -8,7 +8,6 @@
 import UIKit
 
 class ProteinListView: UIViewController {
-
     // MARK: - Properties
     var presenter: ProteinListViewOutput!
 	var footerConstraint: NSLayoutConstraint?
@@ -115,7 +114,6 @@ extension ProteinListView: ProteinListViewInput {
 		alert.addAction(action)
 		alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
 		present(alert, animated: true)
-
 	}
 }
 

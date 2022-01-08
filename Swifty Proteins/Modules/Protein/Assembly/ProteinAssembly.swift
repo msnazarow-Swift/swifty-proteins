@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum ProteinAssembly{
+enum ProteinAssembly {
     // MARK: Static methods
 	static func createModule(protein: String) -> UIViewController {
         let router = ProteinRouter()

@@ -8,7 +8,6 @@
 import Foundation
 
 class ProteinListPresenter {
-
     // MARK: Properties
     weak var view: ProteinListViewInput?
     let interactor: ProteinListInteractorInput
@@ -40,7 +39,7 @@ extension ProteinListPresenter: ProteinListViewOutput {
 			}
 			return
 		}
-		self.proteins = proteins.compactMap{ $0.isEmpty ? nil : $0 }
+		self.proteins = proteins.compactMap { $0.isEmpty ? nil : $0 }
 
 		dataSource.updateForSections(generateAlphaSorted(proteins: proteins).map { ProteinListSection($1) })
 		dataSource.updateForHeaders(generateAlphaSorted(proteins: proteins).map { ProteinListHeaderModel(title: String($0.key)) })
@@ -84,7 +83,7 @@ extension ProteinListPresenter: ProteinListViewOutput {
 		view.showCustomLigandTextField()
 	}
 
-	func okButtonTapped(_ view: ProteinListViewInput, text : String?) {
+	func okButtonTapped(_ view: ProteinListViewInput, text: String?) {
 		guard let text = text?.uppercased(), !text.isEmpty else {
 			view.showError("Empty field")
 			return

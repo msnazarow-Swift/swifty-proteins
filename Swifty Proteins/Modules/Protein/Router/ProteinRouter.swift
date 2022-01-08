@@ -14,10 +14,7 @@ class ProteinRouter {
 
 // MARK: - Router Input (Presenter -> Router)
 extension ProteinRouter: ProteinRouterInput {
-
 	func routeToScreenShot(image: UIImage) {
 		view?.navigationController?.pushViewController(ScreenShotAssembly.createModule(image: image), animated: true)
 	}
-
-
 }

@@ -9,7 +9,6 @@
 import UIKit
 
 class AuthentificationViewController: UIViewController {
-
     // MARK: - Properties
     var presenter: ViewToPresenterAuthentificationProtocol!
 
@@ -56,17 +55,17 @@ class AuthentificationViewController: UIViewController {
 			backgroundImage.topAnchor.constraint(equalTo: view.topAnchor),
 			backgroundImage.bottomAnchor.constraint(equalTo: view.bottomAnchor),
 
-            button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            button.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100)
+			button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+			button.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100)
         ])
     }
 
-    @objc private func didButtonTapped(){
+    @objc private func didButtonTapped() {
         presenter.didButtonTapped()
     }
 }
 
-extension AuthentificationViewController: PresenterToViewAuthentificationProtocol{
+extension AuthentificationViewController: PresenterToViewAuthentificationProtocol {
     func showAlert(message: String) {
         DispatchQueue.main.async {
             let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
