@@ -32,6 +32,7 @@ extension ProteinPresenter: ProteinViewOutput {
 	func viewDidLoad(_ view: ProteinViewInput) {
 		view.setTitle(protein)
         interactor.getMolecule(name: protein)
+        interactor.getElementsInfo()
     }
 
 	func shareButtonTapped(_ view: ProteinViewInput, image: UIImage) {
@@ -55,6 +56,13 @@ extension ProteinPresenter: ProteinInteractorOutput {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
             self.view?.showMolecule(molecule)
+        }
+    }
+    
+    func reciveElementsInfo(_ elements: Elements) {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            self.view?.setElementsInfo(elements)
         }
     }
 }

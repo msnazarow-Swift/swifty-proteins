@@ -36,7 +36,11 @@ enum ProteinInteractorError: LocalizedError {
 // MARK: - Interactor Input (Presenter -> Interactor)
 extension ProteinInteractor: ProteinInteractorInput {
     func getMolecule(name: String) {
-        let urlLigands = URL(string: "http://files.rcsb.org/ligands/view/\(name)_ideal.pdb")!
+        guard let urlLigands = URL(string: "http://files.rcsb.org/ligands/view/\(name)_ideal.pdb")
+        else {
+            self.presenter?.reciveError(ProteinInteractorError.dataNotValid)
+            return
+        }
         URLSession.shared.dataTask(with: urlLigands) { [weak self] data, response, error in
 			guard let self = self else { return }
 			if let error = error {
@@ -58,5 +62,17 @@ extension ProteinInteractor: ProteinInteractorInput {
 				self.presenter?.reciveError(ProteinInteractorError.dataNotValid)
             }
         }.resume()
+    }
+    
+    func getElementsInfo() {
+        if let path = Bundle.main.path(forResource: "PeriodicTableJSON", ofType: "json"),
+           let data = try? Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe){
+            do {
+                let elements = try JSONDecoder().decode(Elements.self, from: data)
+                self.presenter?.reciveElementsInfo(elements)
+            } catch {
+                self.presenter?.reciveError(ProteinInteractorError.dataNotValid)
+            }
+        }
     }
 }

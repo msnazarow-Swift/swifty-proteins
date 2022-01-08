@@ -21,16 +21,12 @@ extension ProteinListDataSource: ProteinListDataSourceInput {
 		self.sections = sections
 	}
 
-	func numberOfSections(in _: UITableView) -> Int {
-		return sections.count
-	}
-
 	func updateForHeaders(_ headers: [ProteinListHeaderModel]) {
 		self.headers = headers
 	}
 }
 
-// MARK: - UITableViewDataSource
+// MARK: - UICollectionViewDataSource
 extension ProteinListDataSource {
 	func numberOfSections(in collectionView: UICollectionView) -> Int {
 		sections.count

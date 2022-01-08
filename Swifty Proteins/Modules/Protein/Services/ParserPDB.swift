@@ -49,6 +49,7 @@ final class ParserPDB: ParserInput {
             .filter { !$0.isEmpty }
         if atomComponents.count != 12 { return .init() }
         let id = Int(atomComponents[1]) ?? 0
+        let atomID = atomComponents[2]
         let vector = SCNVector3(
             Double(atomComponents[6]) ?? 0,
             Double(atomComponents[7]) ?? 0,
@@ -58,6 +59,7 @@ final class ParserPDB: ParserInput {
         
         let atomModel = Atom(
             id: id,
+            atomID: atomID,
             type: type,
             vector: vector,
             connects: []

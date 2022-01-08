@@ -8,8 +8,10 @@
 import SceneKit
 
 final class Atom: Equatable {
-    /// Atom ID
+    /// ID
     let id: Int
+    /// Atom ID
+    let atomID: String
     /// Atom type
     let type: String
     /// Vector x.y.z
@@ -19,11 +21,13 @@ final class Atom: Equatable {
     
     init(
         id: Int = 0,
+        atomID: String = "",
         type: String = "",
         vector: SCNVector3 = .init(),
         connects: [Int] = []
     ) {
         self.id = id
+        self.atomID = atomID
         self.type = type
         self.vector = vector
         self.connects = connects

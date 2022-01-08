@@ -12,6 +12,7 @@ protocol ProteinViewInput: AnyObject {
     func showMolecule(_: Molecule)
     func showError(_ error: String)
 	func showMessage(title: String, text: String)
+    func setElementsInfo(_: Elements)
 	func setTitle(_ title: String)
 }
 
@@ -24,12 +25,14 @@ protocol ProteinViewOutput: AnyObject {
 // MARK: - Interactor Input (Presenter -> Interactor)
 protocol ProteinInteractorInput: AnyObject {
     func getMolecule(name: String)
+    func getElementsInfo()
 }
 
 // MARK: - Interactor Output (Interactor -> Presenter)
 protocol ProteinInteractorOutput: AnyObject {
     func presentMolecule(_: Molecule)
     func reciveError(_ error: Error)
+    func reciveElementsInfo(_: Elements)
 }
 
 // MARK: - Router Input (Presenter -> Router)

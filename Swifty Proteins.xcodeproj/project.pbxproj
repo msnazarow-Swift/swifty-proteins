@@ -11,6 +11,10 @@
 		9635E5342778A202009E82D4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9635E5332778A202009E82D4 /* SceneDelegate.swift */; };
 		9635E53B2778A205009E82D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9635E53A2778A205009E82D4 /* Assets.xcassets */; };
 		9635E53E2778A205009E82D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9635E53C2778A205009E82D4 /* LaunchScreen.storyboard */; };
+		965EC1582788CD660071F264 /* ProteinPopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965EC1572788CD660071F264 /* ProteinPopoverView.swift */; };
+		965ED52A278930770071F264 /* PeriodicTableJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 965ED529278930770071F264 /* PeriodicTableJSON.json */; };
+		965ED52C278931630071F264 /* Elements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965ED52B278931630071F264 /* Elements.swift */; };
+		965ED5342789E14C0071F264 /* SCNVector3+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965ED5332789E14C0071F264 /* SCNVector3+Ext.swift */; };
 		96ED95A92786F0E400AC4DDC /* Molecule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96ED95A82786F0E400AC4DDC /* Molecule.swift */; };
 		96ED95AC2786F20D00AC4DDC /* Atom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96ED95AB2786F20D00AC4DDC /* Atom.swift */; };
 		96ED95AF2786F2DA00AC4DDC /* ParserPDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96ED95AE2786F2DA00AC4DDC /* ParserPDB.swift */; };
@@ -62,6 +66,10 @@
 		9635E53A2778A205009E82D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9635E53D2778A205009E82D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9635E53F2778A205009E82D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		965EC1572788CD660071F264 /* ProteinPopoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProteinPopoverView.swift; sourceTree = "<group>"; };
+		965ED529278930770071F264 /* PeriodicTableJSON.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PeriodicTableJSON.json; sourceTree = "<group>"; };
+		965ED52B278931630071F264 /* Elements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Elements.swift; sourceTree = "<group>"; };
+		965ED5332789E14C0071F264 /* SCNVector3+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNVector3+Ext.swift"; sourceTree = "<group>"; };
 		96ED95A82786F0E400AC4DDC /* Molecule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Molecule.swift; sourceTree = "<group>"; };
 		96ED95AB2786F20D00AC4DDC /* Atom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Atom.swift; sourceTree = "<group>"; };
 		96ED95AE2786F2DA00AC4DDC /* ParserPDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParserPDB.swift; sourceTree = "<group>"; };
@@ -163,6 +171,7 @@
 			children = (
 				9635E53A2778A205009E82D4 /* Assets.xcassets */,
 				F6BCD926278530820045AE29 /* ligands.txt */,
+				965ED529278930770071F264 /* PeriodicTableJSON.json */,
 			);
 			path = Assets.xcassets;
 			sourceTree = "<group>";
@@ -180,6 +189,7 @@
 			children = (
 				96ED95A82786F0E400AC4DDC /* Molecule.swift */,
 				96ED95AB2786F20D00AC4DDC /* Atom.swift */,
+				965ED52B278931630071F264 /* Elements.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -387,6 +397,7 @@
 			isa = PBXGroup;
 			children = (
 				F6BCD8EB278527A20045AE29 /* ProteinView.swift */,
+				965EC1572788CD660071F264 /* ProteinPopoverView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -504,6 +515,7 @@
 				F61F3C2227886BD8009FA510 /* UIColor+Ext.swift */,
 				F61F3C2C2788875D009FA510 /* UICollectionView+Ext.swift */,
 				F61F3C7B2788DA71009FA510 /* UIImage+Ext.swift */,
+				965ED5332789E14C0071F264 /* SCNVector3+Ext.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -574,6 +586,7 @@
 				9635E53E2778A205009E82D4 /* LaunchScreen.storyboard in Resources */,
 				F6BCD927278530820045AE29 /* ligands.txt in Resources */,
 				9635E53B2778A205009E82D4 /* Assets.xcassets in Resources */,
+				965ED52A278930770071F264 /* PeriodicTableJSON.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -590,6 +603,7 @@
 				F6BCD912278527A20045AE29 /* ProteinListDataSource.swift in Sources */,
 				F61F3C38278897FB009FA510 /* ProteinListHeaderModel.swift in Sources */,
 				F6BCD920278528230045AE29 /* ModelRepresentable.swift in Sources */,
+				965ED52C278931630071F264 /* Elements.swift in Sources */,
 				F6162BC22785099F00C31C46 /* AuthentificationPresenter.swift in Sources */,
 				F6BCD90F278527A20045AE29 /* ProteinListContract.swift in Sources */,
 				9635E5322778A202009E82D4 /* AppDelegate.swift in Sources */,
@@ -612,6 +626,7 @@
 				96ED95AC2786F20D00AC4DDC /* Atom.swift in Sources */,
 				F6162BC42785099F00C31C46 /* AuthentificationViewController.swift in Sources */,
 				F6BCD918278527A20045AE29 /* ProteinListRouter.swift in Sources */,
+				965ED5342789E14C0071F264 /* SCNVector3+Ext.swift in Sources */,
 				F61F3C5C2788C8A8009FA510 /* ScreenShotAssembly.swift in Sources */,
 				F6BCD911278527A20045AE29 /* ProteinListPresenter.swift in Sources */,
 				F6BCD915278527A20045AE29 /* ProteinListCell.swift in Sources */,
@@ -620,6 +635,7 @@
 				F61F3C642788C8A8009FA510 /* ScreenShotRouter.swift in Sources */,
 				F6162BC62785099F00C31C46 /* AuthentificationRouter.swift in Sources */,
 				F6BCD908278527A20045AE29 /* ProteinPresenter.swift in Sources */,
+				965EC1582788CD660071F264 /* ProteinPopoverView.swift in Sources */,
 				F6BCD925278529190045AE29 /* CellIdentifiable.swift in Sources */,
 				F6BCD905278527A20045AE29 /* ProteinContract.swift in Sources */,
 				F6BCD90D278527A20045AE29 /* ProteinInteractor.swift in Sources */,

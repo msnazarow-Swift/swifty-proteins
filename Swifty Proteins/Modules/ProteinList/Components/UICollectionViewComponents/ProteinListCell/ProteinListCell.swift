@@ -26,7 +26,6 @@ class ProteinListCell: UICollectionViewCell, CellIdentifiable {
 	}
 
 	func setupUI() {
-//		selectionStyle = .none
 		backgroundColor = UIColor.tertiarySystemBackground.withAlphaComponent(0.7)
 		layer.cornerRadius = 10
 		clipsToBounds = true
