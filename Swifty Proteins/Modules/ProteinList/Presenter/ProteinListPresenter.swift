@@ -79,6 +79,18 @@ extension ProteinListPresenter: ProteinListViewOutput {
 		guard let protein = proteins.randomElement() else { return }
 		router.routeToProtein(protein)
 	}
+
+	func customButtonTapped(_ view: ProteinListViewInput) {
+		view.showCustomLigandTextField()
+	}
+
+	func okButtonTapped(_ view: ProteinListViewInput, text : String?) {
+		guard let text = text, !text.isEmpty else {
+			view.showError("Empty field")
+			return
+		}
+		router.routeToProtein(text)
+	}
 }
 
 // MARK: - Cell Output (Cell -> Presenter)

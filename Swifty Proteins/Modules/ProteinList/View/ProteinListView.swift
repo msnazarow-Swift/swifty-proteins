@@ -60,8 +60,9 @@ class ProteinListView: UIViewController {
 		navigationItem.searchController = searchController
 		navigationItem.titleView?.tintColor = .white
 		let randomButton = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(randomButtonTapped))
-		randomButton.title = "Random"
+		let customButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(customButtonTapped))
 		navigationItem.setRightBarButton(randomButton, animated: true)
+		navigationItem.setRightBarButtonItems([customButton, randomButton], animated: true)
 		definesPresentationContext = false
 	}
 
@@ -81,6 +82,10 @@ class ProteinListView: UIViewController {
 	@objc func randomButtonTapped() {
 		presenter.randomButtonTapped(self)
 	}
+
+	@objc func customButtonTapped() {
+		presenter.customButtonTapped(self)
+	}
 }
 
 // MARK: - View Input (Presenter -> View)
@@ -95,6 +100,18 @@ extension ProteinListView: ProteinListViewInput {
 		let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
 		alert.addAction(UIAlertAction(title: "OK", style: .default))
 		present(alert, animated: true)
+	}
+
+	func showCustomLigandTextField() {
+		let alert = UIAlertController(title: "Curstom ligand", message: "Enter from one to three letters", preferredStyle: .alert)
+		alert.addTextField()
+		let action = UIAlertAction(title: "OK", style: .default) { _ in
+			self.presenter.okButtonTapped(self, text: alert.textFields?[0].text)
+		}
+		alert.addAction(action)
+		alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+		present(alert, animated: true)
+
 	}
 }
 

@@ -40,6 +40,7 @@ class AuthentificationViewController: UIViewController {
     }
 
     private func setupUI() {
+		view.backgroundColor = UIColor.sceneBackground
         addSubviews()
         setupConstraints()
     }
