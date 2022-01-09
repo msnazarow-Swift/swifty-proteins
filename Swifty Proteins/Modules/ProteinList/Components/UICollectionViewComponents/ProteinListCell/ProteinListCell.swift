@@ -16,7 +16,6 @@ class ProteinListCell: UICollectionViewCell, CellIdentifiable {
 		label.translatesAutoresizingMaskIntoConstraints = false
 		label.textAlignment = .center
 		label.contentMode = .center
-		label.textColor = .white
 		return label
 	}()
 

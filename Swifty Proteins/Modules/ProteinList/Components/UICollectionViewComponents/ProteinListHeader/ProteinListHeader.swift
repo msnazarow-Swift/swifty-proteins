@@ -29,12 +29,12 @@ class ProteinListHeader: UICollectionReusableView, CellIdentifiable {
 	}
 
 	func setupUI() {
+		backgroundColor = UIColor.tertiarySystemBackground.withAlphaComponent(0.7)
 		addSubviews()
 		setupConstraints()
 	}
 
 	func addSubviews() {
-		backgroundColor = UIColor.tertiarySystemBackground.withAlphaComponent(0.7)
 		addSubview(label)
 	}
 	func setupConstraints() {

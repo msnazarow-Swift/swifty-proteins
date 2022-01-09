@@ -67,10 +67,10 @@ class AuthentificationViewController: UIViewController {
 
 extension AuthentificationViewController: PresenterToViewAuthentificationProtocol {
     func showAlert(message: String) {
-        DispatchQueue.main.async {
-            let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        DispatchQueue.main.async {[weak self] in
+			let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
-            self.present(alert, animated: true, completion: nil)
+            self?.present(alert, animated: true, completion: nil)
         }
     }
 }

@@ -34,7 +34,8 @@
 		F61F3C622788C8A8009FA510 /* ScreenShotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61F3C552788C8A8009FA510 /* ScreenShotView.swift */; };
 		F61F3C632788C8A8009FA510 /* ScreenShotInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61F3C572788C8A8009FA510 /* ScreenShotInteractor.swift */; };
 		F61F3C642788C8A8009FA510 /* ScreenShotRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61F3C5A2788C8A8009FA510 /* ScreenShotRouter.swift */; };
-		F61F3C7C2788DA71009FA510 /* UIImage+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61F3C7B2788DA71009FA510 /* UIImage+Ext.swift */; };
+		F61F3C7C2788DA71009FA510 /* Image+Trim.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61F3C7B2788DA71009FA510 /* Image+Trim.swift */; };
+		F6679444278A5F5400F8DEA2 /* UImage+Invert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6679443278A5F5400F8DEA2 /* UImage+Invert.swift */; };
 		F6BCD905278527A20045AE29 /* ProteinContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BCD8DF278527A20045AE29 /* ProteinContract.swift */; };
 		F6BCD906278527A20045AE29 /* ProteinAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BCD8E1278527A20045AE29 /* ProteinAssembly.swift */; };
 		F6BCD908278527A20045AE29 /* ProteinPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BCD8E4278527A20045AE29 /* ProteinPresenter.swift */; };
@@ -88,7 +89,8 @@
 		F61F3C552788C8A8009FA510 /* ScreenShotView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenShotView.swift; sourceTree = "<group>"; };
 		F61F3C572788C8A8009FA510 /* ScreenShotInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenShotInteractor.swift; sourceTree = "<group>"; };
 		F61F3C5A2788C8A8009FA510 /* ScreenShotRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenShotRouter.swift; sourceTree = "<group>"; };
-		F61F3C7B2788DA71009FA510 /* UIImage+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ext.swift"; sourceTree = "<group>"; };
+		F61F3C7B2788DA71009FA510 /* Image+Trim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Trim.swift"; sourceTree = "<group>"; };
+		F6679443278A5F5400F8DEA2 /* UImage+Invert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UImage+Invert.swift"; sourceTree = "<group>"; };
 		F6BCD8DF278527A20045AE29 /* ProteinContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProteinContract.swift; sourceTree = "<group>"; };
 		F6BCD8E1278527A20045AE29 /* ProteinAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProteinAssembly.swift; sourceTree = "<group>"; };
 		F6BCD8E4278527A20045AE29 /* ProteinPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProteinPresenter.swift; sourceTree = "<group>"; };
@@ -510,7 +512,8 @@
 				F6BCD929278532AE0045AE29 /* UITableView+Ext.swift */,
 				F61F3C2227886BD8009FA510 /* UIColor+Ext.swift */,
 				F61F3C2C2788875D009FA510 /* UICollectionView+Ext.swift */,
-				F61F3C7B2788DA71009FA510 /* UIImage+Ext.swift */,
+				F61F3C7B2788DA71009FA510 /* Image+Trim.swift */,
+				F6679443278A5F5400F8DEA2 /* UImage+Invert.swift */,
 				965ED5332789E14C0071F264 /* SCNVector3+Ext.swift */,
 			);
 			path = Extentions;
@@ -634,13 +637,14 @@
 				F6BCD917278527A20045AE29 /* ProteinListInteractor.swift in Sources */,
 				96ED9F9527878B0600AC4DDC /* CPKColor.swift in Sources */,
 				F6BCD92A278532AE0045AE29 /* UITableView+Ext.swift in Sources */,
-				F61F3C7C2788DA71009FA510 /* UIImage+Ext.swift in Sources */,
+				F61F3C7C2788DA71009FA510 /* Image+Trim.swift in Sources */,
 				F6BCD91C278527F90045AE29 /* SectionProtocol.swift in Sources */,
 				F6162BC02785099F00C31C46 /* AuthentificationContract.swift in Sources */,
 				F6BCD910278527A20045AE29 /* ProteinListAssembly.swift in Sources */,
 				96ED95AC2786F20D00AC4DDC /* Atom.swift in Sources */,
 				F6162BC42785099F00C31C46 /* AuthentificationViewController.swift in Sources */,
 				F6BCD918278527A20045AE29 /* ProteinListRouter.swift in Sources */,
+				F6679444278A5F5400F8DEA2 /* UImage+Invert.swift in Sources */,
 				965ED5342789E14C0071F264 /* SCNVector3+Ext.swift in Sources */,
 				F61F3C5C2788C8A8009FA510 /* ScreenShotAssembly.swift in Sources */,
 				F6BCD911278527A20045AE29 /* ProteinListPresenter.swift in Sources */,

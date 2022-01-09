@@ -75,7 +75,10 @@ extension ProteinListPresenter: ProteinListViewOutput {
 	}
 
 	func randomButtonTapped(_ view: ProteinListViewInput) {
-		guard let protein = proteins.randomElement() else { return }
+		guard let protein = proteins.randomElement() else {
+			view.showError("No protein found")
+			return
+		}
 		router.routeToProtein(protein)
 	}
 

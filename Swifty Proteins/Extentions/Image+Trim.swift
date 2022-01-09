@@ -1,4 +1,4 @@
-// UIImage+Ext.swift
+// Image+Trim.swift
 //
 // Copyright © 2020 Christopher Zielinski.
 // https://gist.github.com/chriszielinski/aec9a2f2ba54745dc715dd55f5718177
@@ -70,7 +70,10 @@ extension CGImage {
 	///   - maximumAlphaChannel: The maximum alpha channel value to consider  _transparent_ and thus crop. Any alpha value
 	///         strictly greater than `maximumAlphaChannel` will be considered opaque.
 	func trimmingTransparentPixels(maximumAlphaChannel: UInt8 = 0) -> CGImage? {
-		return _CGImageTransparencyTrimmer(image: self, maximumAlphaChannel: maximumAlphaChannel)?.trim()
+		let trim = _CGImageTransparencyTrimmer(image: self, maximumAlphaChannel: maximumAlphaChannel)
+		let image = trim?.trim()
+		free(trim?.zeroByteBlock)
+		return image
 	}
 }
 

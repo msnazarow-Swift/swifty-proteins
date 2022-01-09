@@ -46,22 +46,21 @@ extension ProteinPresenter: ProteinCellOutput {}
 extension ProteinPresenter: ProteinInteractorOutput {
     func reciveError(_ error: Error) {
         DispatchQueue.main.async { [weak self] in
-            guard let self = self else { return }
-            self.view?.showError(error.localizedDescription)
+			self?.view?.showError(error.localizedDescription) {
+				self?.router.routeToProteinList()
+			}
         }
     }
 
     func presentMolecule(_ molecule: Molecule) {
         DispatchQueue.main.async { [weak self] in
-            guard let self = self else { return }
-            self.view?.showMolecule(molecule)
+            self?.view?.showMolecule(molecule)
         }
     }
 
     func reciveElementsInfo(_ elements: Elements) {
         DispatchQueue.main.async { [weak self] in
-            guard let self = self else { return }
-            self.view?.setElementsInfo(elements)
+            self?.view?.setElementsInfo(elements)
         }
     }
 }

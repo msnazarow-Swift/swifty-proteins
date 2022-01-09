@@ -16,5 +16,10 @@ class ProteinRouter {
 extension ProteinRouter: ProteinRouterInput {
 	func routeToScreenShot(image: UIImage) {
 		view?.navigationController?.pushViewController(ScreenShotAssembly.createModule(image: image), animated: true)
+		view?.stopAnimating()
+	}
+
+	func routeToProteinList() {
+		view?.navigationController?.popViewController(animated: true)
 	}
 }

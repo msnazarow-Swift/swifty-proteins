@@ -83,7 +83,7 @@ class ScreenShotView: UIViewController {
 	}
 
 	private func setupNavigationItem() {
-		let shareButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareButtonTapped))
+		let shareButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(screenshotButtonTapped))
 		navigationItem.setRightBarButton(shareButton, animated: true)
 	}
 
@@ -92,7 +92,7 @@ class ScreenShotView: UIViewController {
 		scrollView.addSubview(vstack)
 	}
 
-	@objc func shareButtonTapped(_ sender: UIButton) {
+	@objc func screenshotButtonTapped(_ sender: UIButton) {
 		presenter.shareButtonTapped(self, title: titleTextField.text, text: contentTextView.text)
 	}
 
